@@ -1,0 +1,18 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+  - caption: "Logistics"
+    chapters:
+      - file: class_schedule
+      - file: observing_schedule
+  - caption: "Lab 0"
+    chapters:
+      - file: labs/lab0_1
+      - file: labs/lab0_2
+      # - file: labs/lab0_3
+  # - caption: "Final Project"
+  #   chapters:
+  #     - file: final_project

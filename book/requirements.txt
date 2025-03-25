@@ -1,0 +1,12 @@
+jupyter-book
+numpy
+scipy
+matplotlib
+pandas
+astropy
+reproject
+sep
+tqdm
+ipython
+ipywidgets
+
