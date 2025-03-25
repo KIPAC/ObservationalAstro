@@ -60,6 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'labs/lab0_3';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Lab 0.2: The Night Sky" href="lab0_2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -122,8 +123,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -142,7 +141,7 @@
     
   
 
-<a class="navbar-brand logo" href="../intro.html">
+<a class="navbar-brand logo" href="../welcome.html">
   
   
   
@@ -174,7 +173,7 @@
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../intro.html">
+                <a class="reference internal" href="../welcome.html">
                     Welcome to Physics 100!
                 </a>
             </li>
@@ -182,13 +181,14 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Logistics</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../class_schedule.html">Class Schedule</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="../observing_schedule.html">Observing Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shared_data.html">Shared Data</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lab 0</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="lab0_1.html">Lab 0.1: Introduction to Observing</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="lab0_1.html">Lab 0.1: Observing Basics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lab0_2.html">Lab 0.2: The Night Sky</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lab 0.3: Pretty Pictures</a></li>
 </ul>
 
     </div>
@@ -416,9 +416,9 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calibrating-astronomical-images">Calibrating Astronomical Images</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bias">Bias:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dark">Dark:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flat">Flat:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bias">Bias</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dark">Dark</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flat">Flat</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stacking-images">Stacking Images</a></li>
@@ -437,9 +437,16 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="lab-0-3-pretty-pictures">
 <h1>Lab 0.3: Pretty Pictures<a class="headerlink" href="#lab-0-3-pretty-pictures" title="Link to this heading">#</a></h1>
-<p>In this lab, we will be calibrating and stacking raw images from the telescope to create a pretty color picture! We recommend running this notebook with Google Colab so that your team can (1) collaborate on the notebook without passing files around, (2) easily load data from a shared Google Drive folder, and (3) avoid Python installation and environment headaches. If your team would like to switch to a different workflow for the final project, we’ll happily help you set that up later.</p>
-<p>Managing files can quickly become <em>very tedious</em> in this class, especially when sharing data between groups, so we will follow a standard structure for the shared Google Drive folder. Science exposures will be placed in <code class="docutils literal notranslate"><span class="pre">&lt;object_name&gt;/&lt;observation_date&gt;</span></code> with filter and exposure time information in the file name. Calibration files will be placed in <code class="docutils literal notranslate"><span class="pre">calibration/&lt;observation_date&gt;</span></code> with prefixes <code class="docutils literal notranslate"><span class="pre">flat_</span></code>, <code class="docutils literal notranslate"><span class="pre">dark_</span></code>, and <code class="docutils literal notranslate"><span class="pre">bias_</span></code>. Files from a night of observing M3 last year are already there as an example, please take a quick look. We provide a nice way to load and process files from this structure using Python dictionaries below. It pays to be organized here!</p>
-<p>You should complete the key conceptual lines of code marked with <code class="docutils literal notranslate"><span class="pre">TODO:</span></code>, and read the comments for the rest of the code to make sure you understand what’s going on. There are also <strong>bolded questions</strong> to answer. Please work through these together as a team. When you’re done, run all the cells before saving and submitting to Canvas.</p>
+<p><em>Due: tbd</em></p>
+<p>This lab walks through calibration and stacking of raw images from the telescope. By the end of this lab, you will be able to</p>
+<ul class="simple">
+<li><p>perform image calibration using darks, flats, and biases</p></li>
+<li><p>analyze the performance of the camera and telescope using these files</p></li>
+<li><p>align and stack multiple exposures of the same object</p></li>
+<li><p>combine images from individual filters to make a pretty color image</p></li>
+</ul>
+<p>Depending on your background, this lab may also be a crash course in scientific computing with Python, so start this one early! We recommend running this notebook using Google Colab so that your team can (1) collaborate without passing files around, (2) easily load data from the shared Google Drive folder, and (3) avoid Python installation and environment headaches. If your team would like to switch to a different workflow for the final project, we’ll happily help you set that up later.</p>
+<p>You should complete the key conceptual lines of code marked with <code class="docutils literal notranslate"><span class="pre">TODO:</span></code>, answer the <strong>bolded questions</strong>, and read the comments for the rest of the code to make sure you understand what’s going on. Please work through these together as a team. When you’re done, save the notebook as a PDF with cell outputs included and upload to Canvas.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># If using Colab, mount your Google Drive to access data in the shared folder</span>
@@ -451,7 +458,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># If using Colab (recommended), need to install the reproject package</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># If using Colab, need to install the reproject package</span>
 <span class="o">%</span><span class="k">pip</span> install reproject
 </pre></div>
 </div>
@@ -491,26 +498,24 @@ document.write(`
 <h2>Calibrating Astronomical Images<a class="headerlink" href="#calibrating-astronomical-images" title="Link to this heading">#</a></h2>
 <p>Before we jump into the code, here is a quick primer on calibrations for any charge coupled device (or CCD) camera and why they are necessary. The text has been lifted heavily from <a class="reference external" href="http://adsabs.harvard.edu/abs/2006hca..book.....H">Howell (2006, chapter 4)</a>.</p>
 <section id="bias">
-<h3>Bias:<a class="headerlink" href="#bias" title="Link to this heading">#</a></h3>
+<h3>Bias<a class="headerlink" href="#bias" title="Link to this heading">#</a></h3>
 <p>Every camera offsets the zero level so that the A/D converter never outputs a negative number. This offset is different for every camera and every camera setting (for those cameras with changeable settings). This “bias” value is not necessarily constant for every pixel and must be measured so that it can be subtracted from the raw science frame.</p>
 <p>The bias image has an exposure time of zero seconds. The shutter remains closed and the CCD is simply read out. The purpose of a bias or zero frame is to allow the user to determine the underlying noise level within each data frame. The bias value in a CCD image is usually a low spatial frequency variation throughout the array, caused by the CCD on-chip amplifiers. This variation should remain constant with time. The rms value of the bias level is the CCD read noise. A bias frame contains both the DC offset level (overscan) and the variations on that level. The nature of the bias variations for a given CCD are usually column-wise variations, but may also have small row-wise components as well. Thus, a 2-D, pixel-by-pixel subtraction is often required. A single bias frame will not sample these variations well in a statistical fashion, so an average bias image of 10 or more single bias frames is recommended.</p>
 </section>
 <section id="dark">
-<h3>Dark:<a class="headerlink" href="#dark" title="Link to this heading">#</a></h3>
+<h3>Dark<a class="headerlink" href="#dark" title="Link to this heading">#</a></h3>
 <p>Photons are emitted from every body with a non-zero temperature (on the Kelvin scale). Therefore everything emits light, even your camera. These thermal photons can cause a signal in a sensitive CCD camera and therefore the rate at which this occurs needs to be accounted for in a fully calibrated image.</p>
 <p>CCD dark frames are images taken with the shutter closed but for some time period, usually equal to that of your target frames. That is, if one is planning to dark correct a 45 second exposure, a 45 second dark frame would typically be obtained. Longer dark frames can often be avoided using the assumption that the dark current increases linearly with time and a simple scaling can be applied. However, this is not always true. Dark frames are a method by which the thermal noise (dark current) in a CCD can be measured. They also can give you information about bad or “hot” pixels that exist as well as provide an estimate of the rate of cosmic ray strikes at your observing site. Observatory class CCD cameras are usually cooled with liquid nitrogen to temperatures at which the dark current is essentially zero. Many of these systems therefore do not require the use of dark exposure CCD frames in the calibration process. Thermoelectrically cooled systems are typically not cooled to low enough temperatures such that one may ignore the dark current, but they are getting better. In addition, these less expensive models often have poor temperature stability allowing the dark current to wander a bit with time. Multiple darks averaged together are the best way to produce the final dark calibration frame. Note that the bias is also present in dark frames. To get an accurate measure of the dark current, the bias must be subtracted.</p>
 </section>
 <section id="flat">
-<h3>Flat:<a class="headerlink" href="#flat" title="Link to this heading">#</a></h3>
+<h3>Flat<a class="headerlink" href="#flat" title="Link to this heading">#</a></h3>
 <p>Not every pixel in a CCD camera responds to the sky in the exact same way. There are many reasons for this. For one, not every pixel is created equally, so there may be some intrinsic sensitivity difference from pixel to pixel. However, the CCD may be obscured slightly by the optics of the telescope, or by dust on the camera or filters. Therefore this pixel-to-pixel variation must also be accounted for.</p>
 <p>Flat field exposures are used to correct for pixel-to-pixel variations in the CCD response as well as any nonuniform illumination of the detector itself. Flat fields expose the CCD to light from either a dome screen, the twilight sky, the nighttime sky, or a projector lamp in an attempt to provide a high signal-to-noise ratio (SNR) uniformly illuminated calibration image. For narrow-band imaging, flats are very helpful in removing fringing, which may occur in object frames. Flat field calibration frames are needed for each color, wavelength region, or different instrumental setup used in which object frames are to be taken. A good flat should remain constant to about 1%, with 2% or larger changes being indicators of a possible problem. As with the other calibration frames, at least 5 or more flat fields should be taken and averaged to produce the final flat used for image calibration.</p>
-<p><strong>Question: Why are there both 0.2 s and 10 s darks in the example M3 observations? Why do bias files not have a filter or exposure time?</strong></p>
-<p>Answer:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Specify data directory, and which object we want from which date</span>
-<span class="n">data_dir</span> <span class="o">=</span> <span class="s1">&#39;/content/drive/MyDrive/PHYSICS100_S2025/data&#39;</span> <span class="c1"># add a shortcut to the shared folder in your Google Drive and change the path here</span>
-<span class="n">object_name</span> <span class="o">=</span> <span class="s1">&#39;m3&#39;</span>
+<span class="n">data_dir</span> <span class="o">=</span> <span class="s1">&#39;/content/drive/MyDrive/PHYSICS100_S2025/data&#39;</span> <span class="c1"># add a shortcut to PHYSICS100_S2025 in your Google Drive for easy access</span>
+<span class="n">object_name</span> <span class="o">=</span> <span class="s1">&#39;m3&#39;</span> <span class="c1"># TODO: change this to the object you observed, although we recommend completing the notebook with the M3 example first</span>
 <span class="n">date_string</span> <span class="o">=</span> <span class="s1">&#39;2024_04_21&#39;</span>
 
 <span class="c1"># Gather filenames, using glob to find all files that match a pattern</span>
@@ -527,6 +532,8 @@ document.write(`
 </div>
 </div>
 </div>
+<p><strong>Question: Why are there both 0.2 s and 10 s darks in the example M3 observations? Why do bias files not have a filter or exposure time?</strong></p>
+<p>Answer:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute average bias</span>
@@ -615,7 +622,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p><strong>Question: In the line above, which are subtracted, which are divided, and why?</strong></p>
+<p><strong>Question: In the cell above, which are subtracted, which are divided, and why?</strong></p>
 <p>Answer:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -624,9 +631,6 @@ document.write(`
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/b22766d56b7ab6996334ec6a5f532dc9666c0fb96a9b3bd17a556e0e22fefd94.png" src="../_images/b22766d56b7ab6996334ec6a5f532dc9666c0fb96a9b3bd17a556e0e22fefd94.png" />
 </div>
 </div>
 </section>
@@ -666,7 +670,7 @@ document.write(`
 
     <span class="c1"># TODO: throw away parts of image not covered by all exposures, by setting to np.nan (&quot;not a number&quot;, often used for invalid values)</span>
     <span class="c1"># Hint: the code will look something like a[b!=c] = np.nan, this means set all elements of a where b is not equal to c to np.nan</span>
-    <span class="n">_</span> <span class="o">=</span> <span class="n">_</span>
+     <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
 
     <span class="c1"># Update header with new exposure time</span>
     <span class="n">new_header</span> <span class="o">=</span> <span class="n">reference_header</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -679,8 +683,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "2e77952452594bf38b8398a54fb739e5", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "c1b50ede1f9f416cb831be4ef229c6b1", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <p><strong>Question: Why is it taking so long? What’s so complicated about shifting an image?</strong></p>
 <p>Answer:</p>
@@ -694,9 +696,6 @@ document.write(`
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/de43eaccab85770c2b918b3b98600dac3ed0df254fb29eea7108cb310ffb2275.png" src="../_images/de43eaccab85770c2b918b3b98600dac3ed0df254fb29eea7108cb310ffb2275.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -717,7 +716,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create composite image</span>
-<span class="n">composite</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">coadded_science</span><span class="p">[</span><span class="n">f</span><span class="p">]</span><span class="o">.</span><span class="n">data</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="s1">&#39;V&#39;</span><span class="p">,</span><span class="s1">&#39;V&#39;</span><span class="p">]],</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">composite</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">coadded_science</span><span class="p">[</span><span class="n">f</span><span class="p">]</span><span class="o">.</span><span class="n">data</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;V&#39;</span><span class="p">,</span><span class="s1">&#39;V&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">]],</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># missing R filter, so use V again</span>
 <span class="n">clip_min</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanpercentile</span><span class="p">(</span><span class="n">composite</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># minimum at 80th percentile</span>
 <span class="n">clip_max</span> <span class="o">=</span> <span class="c1"># TODO: Set the maximum at a percentile that looks good</span>
 <span class="n">composite</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">composite</span><span class="p">,</span> <span class="n">clip_min</span><span class="p">,</span> <span class="n">clip_max</span><span class="p">)</span>
@@ -731,9 +730,6 @@ document.write(`
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/102021566dbade14a25035e50488f507bfa9ce2ccff033ca08930d4b8191c023.png" src="../_images/102021566dbade14a25035e50488f507bfa9ce2ccff033ca08930d4b8191c023.png" />
 </div>
 </div>
 <p><strong>Question: What do you notice in your final composite image? No right or wrong answer here!</strong></p>
@@ -789,6 +785,15 @@ You can find a detailed index of ASTAP functions via their <a class="reference e
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="lab0_2.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Lab 0.2: The Night Sky</p>
+      </div>
+    </a>
 </div>
                 </footer>
               
@@ -806,9 +811,9 @@ You can find a detailed index of ASTAP functions via their <a class="reference e
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calibrating-astronomical-images">Calibrating Astronomical Images</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bias">Bias:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dark">Dark:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flat">Flat:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bias">Bias</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dark">Dark</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flat">Flat</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stacking-images">Stacking Images</a></li>

@@ -1,4 +1,4 @@
-# Lab 0.1: Intro to Observing
+# Lab 0.1: Observing Basics
 
 *Due before arriving at the observatory on April 2*
 
