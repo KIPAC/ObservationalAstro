@@ -2,17 +2,18 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: intro
+root: welcome
 parts:
   - caption: "Logistics"
     chapters:
       - file: class_schedule
       - file: observing_schedule
+      - file: shared_data
   - caption: "Lab 0"
     chapters:
       - file: labs/lab0_1
       - file: labs/lab0_2
-      # - file: labs/lab0_3
+      - file: labs/lab0_3
   # - caption: "Final Project"
   #   chapters:
   #     - file: final_project
