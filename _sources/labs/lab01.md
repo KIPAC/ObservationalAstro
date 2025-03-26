@@ -1,4 +1,4 @@
-# Lab 0.2: The Night Sky
+# Lab 0.1: The Night Sky
 
 *Due: tbd*
 
