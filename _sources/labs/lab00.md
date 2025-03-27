@@ -10,7 +10,7 @@ This lab introduces the fundamentals of using a telescope to take images. By the
 
 ## Before Arriving at the Observatory
 
-1. Select one object that your group would like to observe at the telescope from the Messier catalog ([here](http://en.wikipedia.org/wiki/List_of_Messier_objects) or [here](http://messier.seds.org/)) and/or from the seven non-Earth planets 
+1. Select one object that you would like to observe at the telescope from the Messier catalog ([here](http://en.wikipedia.org/wiki/List_of_Messier_objects) or [here](http://messier.seds.org/)) and/or from the seven non-Earth planets 
 in the solar system.
 
 2. Use Wikipedia, SEDS, Wolfram-Alpha or planetarium software to find the current positions (RA or Right Ascension and DEC or Declination), angular sizes, and respective brightness of the objects. We recommend downloading and using the planetarium software [Stellarium](http://www.stellarium.org/) for this since you will be using it at the observatory. There are a couple of pointers to help you with your choice:
