@@ -1,6 +1,6 @@
 # Lab 0.1: The Night Sky
 
-*Due: tbd*
+*Due: Saturday, April 5 at 11:59 PM*
 
 This lab delves deeper into the night sky. By the end of this lab, you will be able to:
  - use planetarium software to simulate the night sky

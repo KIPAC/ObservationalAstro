@@ -11,6 +11,7 @@ parts:
       - file: logistics/shared_data
   - caption: "Lab 0"
     chapters:
+      - file: labs/python_tutorial
       - file: labs/lab00
       - file: labs/lab01
       - file: labs/lab02
