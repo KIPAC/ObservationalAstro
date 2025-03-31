@@ -57,11 +57,11 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'labs/lab02';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'labs/lab_0.2';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Introduction to Python" href="python_tutorial.html" />
-    <link rel="prev" title="Lab 0.1: The Night Sky" href="lab01.html" />
+    <link rel="next" title="Introduction to Python and FITS" href="python_tutorial.html" />
+    <link rel="prev" title="Lab 0.1: The Night Sky" href="lab_0.1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -187,13 +187,13 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lab 0</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="lab00.html">Lab 0.0: Observing Basics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lab01.html">Lab 0.1: The Night Sky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab_0.0.html">Lab 0.0: Observing Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab_0.1.html">Lab 0.1: The Night Sky</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Lab 0.2: Calibration, Stacking, and Pretty Pictures!</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Other Resources</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="python_tutorial.html">Introduction to Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_tutorial.html">Introduction to Python and FITS</a></li>
 </ul>
 
     </div>
@@ -248,7 +248,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/KIPAC/ObservationalAstro/blob/main/book/labs/lab02.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/KIPAC/ObservationalAstro/blob/main/book/labs/lab_0.2.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -296,7 +296,7 @@
       
       
       
-      <li><a href="https://github.com/KIPAC/ObservationalAstro/issues/new?title=Issue%20on%20page%20%2Flabs/lab02.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/KIPAC/ObservationalAstro/issues/new?title=Issue%20on%20page%20%2Flabs/lab_0.2.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -326,7 +326,7 @@
       
       
       
-      <li><a href="../_sources/labs/lab02.ipynb" target="_blank"
+      <li><a href="../_sources/labs/lab_0.2.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -442,7 +442,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="lab-0-2-calibration-stacking-and-pretty-pictures">
 <h1>Lab 0.2: Calibration, Stacking, and Pretty Pictures!<a class="headerlink" href="#lab-0-2-calibration-stacking-and-pretty-pictures" title="Link to this heading">#</a></h1>
-<p><em>Due: Saturday, April 5 at 11:59 PM</em></p>
+<p><em>Due: Wednesday, April 9 before observing. We will spend the first computer lab working on this notebook.</em></p>
 <p>This lab walks through calibration and stacking of raw images from the telescope. By the end of this lab, you will be able to</p>
 <ul class="simple">
 <li><p>perform image calibration using darks, flats, and biases</p></li>
@@ -450,8 +450,8 @@ document.write(`
 <li><p>align and stack multiple exposures of the same object</p></li>
 <li><p>combine images from individual filters to make a pretty color image</p></li>
 </ul>
-<p>Depending on your background, this lab may also be a crash course in scientific computing with Python, so start this one early! We recommend opening this notebook with Google Colab and making a shared copy in Google Drive so that your team can (1) collaborate without passing files around, (2) easily load data from the shared class folder, and (3) avoid Python installation and environment headaches. If your team would like to switch to a different workflow for the final project, we’ll happily help you set that up later.</p>
-<p>You should complete the key conceptual lines of code marked with <code class="docutils literal notranslate"><span class="pre">TODO:</span></code>, answer the <strong>bolded questions</strong>, and read the comments for the rest of the code to make sure you understand what’s going on. Please work through these together as a team. When you’re done, save the notebook as a PDF with cell outputs included and upload to Canvas.</p>
+<p>Depending on your background, this lab may also be a crash course in scientific computing with Python, so start this one early! We recommend opening this notebook with Google Colab and making a copy in Google Drive so that you can (1) easily load data from the shared class folder, (2) avoid Python installation and environment headaches, and (3) easily collaborate with your team later in the quarter. If you would like to switch to a different workflow for the final project, we’ll happily help you set that up.</p>
+<p>You should complete the key conceptual lines of code marked with <code class="docutils literal notranslate"><span class="pre">TODO:</span></code>, answer the <strong>bolded questions</strong>, and read the comments for the rest of the code to make sure you understand what’s going on. When you’re done, save the notebook as a PDF with cell outputs included and upload to Canvas.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># If using Colab, mount your Google Drive to access data in the shared folder</span>
@@ -492,9 +492,10 @@ document.write(`
 <span class="kn">import</span><span class="w"> </span><span class="nn">glob</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 
-<span class="c1"># tqdm has a nice progress bar</span>
+<span class="c1"># miscellaneous</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">tqdm.notebook</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">defaultdict</span>
 </pre></div>
 </div>
 </div>
@@ -520,35 +521,61 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Specify data directory, and which object we want from which date</span>
 <span class="n">data_dir</span> <span class="o">=</span> <span class="s1">&#39;/content/drive/MyDrive/PHYSICS100_S2025/data&#39;</span> <span class="c1"># add a shortcut to PHYSICS100_S2025 in your Google Drive for easy access</span>
-<span class="n">object_name</span> <span class="o">=</span> <span class="s1">&#39;m3&#39;</span> <span class="c1"># TODO: change this to the object you observed, although we recommend completing the notebook with the M3 example first</span>
-<span class="n">date_string</span> <span class="o">=</span> <span class="s1">&#39;2024_04_21&#39;</span>
+<span class="n">object_name</span> <span class="o">=</span> <span class="s1">&#39;m51&#39;</span> <span class="c1"># TODO: change this to the object you observed, although we recommend completing the notebook with the M51 example first</span>
+<span class="n">date_string</span> <span class="o">=</span> <span class="s1">&#39;2024_04_28&#39;</span>
+<span class="n">telescope_name</span> <span class="o">=</span> <span class="s1">&#39;0.7m&#39;</span>
 
-<span class="c1"># Gather filenames, using glob to find all files that match a pattern</span>
-<span class="n">filenames</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;light&#39;</span><span class="p">:</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span> <span class="n">object_name</span><span class="p">,</span> <span class="n">date_string</span><span class="p">,</span> <span class="s1">&#39;*.fit&#39;</span><span class="p">)),</span> <span class="c1"># raw science exposures</span>
-    <span class="s1">&#39;flat&#39;</span><span class="p">:</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span> <span class="s1">&#39;calibration&#39;</span><span class="p">,</span> <span class="n">date_string</span><span class="p">,</span> <span class="s1">&#39;flat*.fit&#39;</span><span class="p">)),</span>
-    <span class="s1">&#39;dark&#39;</span><span class="p">:</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span> <span class="s1">&#39;calibration&#39;</span><span class="p">,</span> <span class="n">date_string</span><span class="p">,</span> <span class="s1">&#39;dark*.fit&#39;</span><span class="p">)),</span>
-    <span class="s1">&#39;bias&#39;</span><span class="p">:</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span> <span class="s1">&#39;calibration&#39;</span><span class="p">,</span> <span class="n">date_string</span><span class="p">,</span> <span class="s1">&#39;bias*.fit&#39;</span><span class="p">)),</span>
-<span class="p">}</span>
-
-<span class="c1"># Load the FITS files</span>
-<span class="n">files</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="p">[</span><span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">f</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">v</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">filenames</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+<span class="c1"># Gather all the filenames for the object and dates</span>
+<span class="n">filenames</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span> <span class="s1">&#39;calibration&#39;</span><span class="p">,</span> <span class="n">telescope_name</span><span class="p">,</span> <span class="n">date_string</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s1">*.fit&#39;</span><span class="p">))</span><span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;flat&#39;</span><span class="p">,</span> <span class="s1">&#39;dark&#39;</span><span class="p">,</span> <span class="s1">&#39;bias&#39;</span><span class="p">]}</span> <span class="c1"># calibration exposures</span>
+<span class="n">filenames</span><span class="p">[</span><span class="s1">&#39;light&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span> <span class="n">object_name</span><span class="p">,</span> <span class="n">telescope_name</span><span class="p">,</span> <span class="n">date_string</span><span class="p">,</span> <span class="s1">&#39;*.fit&#39;</span><span class="p">))</span> <span class="c1"># raw science exposures</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p><strong>Question: Why are there both 0.2 s and 10 s darks in the example M3 observations? Why do bias files not have a filter or exposure time?</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sort the data and headers into dictionaries (defaultdicts are like dictionaries, but they create new keys automatically)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">defaultdict</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)))</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">defaultdict</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)))</span>
+
+<span class="c1"># For each type of exposure, load all the files and append them to the appropriate lists</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">filenames</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">fn</span> <span class="ow">in</span> <span class="n">filenames</span><span class="p">[</span><span class="n">k</span><span class="p">]:</span>
+        <span class="k">with</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdul</span><span class="p">:</span>
+            <span class="nb">filter</span> <span class="o">=</span> <span class="n">hdul</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;FILTER&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="s1">&#39;FILTER&#39;</span> <span class="ow">in</span> <span class="n">hdul</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">header</span> <span class="k">else</span> <span class="kc">None</span> <span class="c1"># get filter from header</span>
+            <span class="n">exp_time</span> <span class="o">=</span> <span class="n">hdul</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;EXPTIME&#39;</span><span class="p">]</span> <span class="c1"># get exposure time from header</span>
+            <span class="n">data</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="nb">filter</span><span class="p">][</span><span class="n">exp_time</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">hdul</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">)</span> <span class="c1"># append data to the appropriate list</span>
+            <span class="n">headers</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="nb">filter</span><span class="p">][</span><span class="n">exp_time</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">hdul</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">header</span><span class="p">)</span> <span class="c1"># append header to the appropriate list</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is how we access the first flat data for filter R and exposure time 0.2 seconds</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;flat&#39;</span><span class="p">][</span><span class="s1">&#39;R&#39;</span><span class="p">][</span><span class="mf">0.2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># This is how we access the second light header for filter V and exposure time 30 seconds</span>
+<span class="n">headers</span><span class="p">[</span><span class="s1">&#39;light&#39;</span><span class="p">][</span><span class="s1">&#39;V&#39;</span><span class="p">][</span><span class="mf">30.0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># This is how we see which exposure times are in the dictionary for darks (`None` is because the dark has no filter)</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;dark&#39;</span><span class="p">][</span><span class="kc">None</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Question: Why do we need 0.1 s, 0.2 s, and 30 s darks in the example M51 observations? Why do biases not have a filter or exposure time?</strong></p>
 <p>Answer:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute average bias</span>
-<span class="n">bias_frames</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">f</span><span class="o">.</span><span class="n">data</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">files</span><span class="p">[</span><span class="s1">&#39;bias&#39;</span><span class="p">]])</span> <span class="c1"># load all bias frames into a numpy array</span>
+<span class="n">bias_frames</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;bias&#39;</span><span class="p">][</span><span class="kc">None</span><span class="p">][</span><span class="mf">0.0</span><span class="p">])</span> <span class="c1"># Bias has no filter and 0.0s exposure time</span>
 <span class="n">avg_bias</span> <span class="o">=</span> <span class="c1"># TODO: Compute the average bias frame (hint: use np.mean with the axis argument)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p><strong>Question: What is the shape of the <code class="docutils literal notranslate"><span class="pre">bias_frames</span></code> array? What does each dimension represent?</strong> (Hint: use <code class="docutils literal notranslate"><span class="pre">bias_frames.shape</span></code>)</p>
+<p><strong>Question: What is the shape of the <code class="docutils literal notranslate"><span class="pre">bias_frames</span></code> array? What does each dimension represent?</strong> (Hint: use <code class="docutils literal notranslate"><span class="pre">.shape</span></code>)</p>
 <p>Answer:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -565,21 +592,19 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute average dark for each exposure time (note: if some exposure times were missing, you would have to scale an existing dark appropriately)</span>
 <span class="n">avg_darks</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="n">dark_exposure_times</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">([</span><span class="n">f</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;EXPTIME&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">files</span><span class="p">[</span><span class="s1">&#39;dark&#39;</span><span class="p">]])</span> <span class="c1"># get unique exposure times from headers</span>
-
-<span class="k">for</span> <span class="n">time</span> <span class="ow">in</span> <span class="n">dark_exposure_times</span><span class="p">:</span>
-    <span class="n">dark_frames</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">f</span><span class="o">.</span><span class="n">data</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">files</span><span class="p">[</span><span class="s1">&#39;dark&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;EXPTIME&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">time</span><span class="p">])</span> <span class="c1"># get all darks with this exposure time</span>
-    <span class="n">avg_darks</span><span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">time</span><span class="p">)]</span> <span class="o">=</span> <span class="c1"># TODO: compute the average dark and subtract the average bias</span>
+<span class="k">for</span> <span class="n">time</span><span class="p">,</span> <span class="n">darks</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;dark&#39;</span><span class="p">][</span><span class="kc">None</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span> <span class="c1"># Dark has no filter</span>
+    <span class="n">avg_darks</span><span class="p">[</span><span class="n">time</span><span class="p">]</span> <span class="o">=</span> <span class="c1"># TODO: compute the average dark and subtract the average bias</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make a histogram of the dark current</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make a histogram of the dark current at different exposure times</span>
 <span class="n">hist_range</span> <span class="o">=</span> <span class="c1"># TODO: Set the range of the histogram to ignore the outliers</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">avg_darks</span><span class="p">[</span><span class="mf">0.2</span><span class="p">]</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> <span class="nb">range</span><span class="o">=</span><span class="n">hist_range</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;step&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;0.2 s&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">avg_darks</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> <span class="nb">range</span><span class="o">=</span><span class="n">hist_range</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;step&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;10 s&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">avg_darks</span><span class="p">[</span><span class="mf">0.1</span><span class="p">]</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> <span class="nb">range</span><span class="o">=</span><span class="n">hist_range</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;step&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;0.1 s&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">avg_darks</span><span class="p">[</span><span class="mf">0.2</span><span class="p">]</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> <span class="nb">range</span><span class="o">=</span><span class="n">hist_range</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;step&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;0.2 s&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">avg_darks</span><span class="p">[</span><span class="mi">30</span><span class="p">]</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> <span class="nb">range</span><span class="o">=</span><span class="n">hist_range</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;step&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;30 s&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -590,23 +615,31 @@ document.write(`
 <p>Answer:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute average flats for each filter</span>
-<span class="n">avg_flats</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="n">flat_filters</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">([</span><span class="n">f</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;FILTER&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">files</span><span class="p">[</span><span class="s1">&#39;flat&#39;</span><span class="p">]])</span> <span class="c1"># get unique filters from headers</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute median flat for each filter</span>
+<span class="n">median_flats</span> <span class="o">=</span> <span class="p">{}</span>
 
-<span class="k">for</span> <span class="nb">filter</span> <span class="ow">in</span> <span class="n">flat_filters</span><span class="p">:</span>
-    <span class="n">flats</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">f</span><span class="o">.</span><span class="n">data</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">files</span><span class="p">[</span><span class="s1">&#39;flat&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;FILTER&#39;</span><span class="p">]</span><span class="o">==</span><span class="nb">filter</span><span class="p">])</span> <span class="c1"># get all flats with this filter</span>
-    <span class="n">corresponding_dark</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">avg_darks</span><span class="p">[</span><span class="n">f</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;EXPTIME&#39;</span><span class="p">]]</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">files</span><span class="p">[</span><span class="s1">&#39;flat&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;FILTER&#39;</span><span class="p">]</span><span class="o">==</span><span class="nb">filter</span><span class="p">])</span> <span class="c1"># get the right dark for each flat exposure time</span>
-    <span class="n">flats</span> <span class="o">=</span> <span class="c1"># TODO: subtract average bias and corresponding dark from each flat</span>
-    <span class="n">normed_flats</span> <span class="o">=</span> <span class="c1"># TODO: normalize flats so that they have a median value of 1.0 (hint: use axes=(1,2) and keepdims=True)</span>
-    <span class="n">avg_flats</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="nb">filter</span><span class="p">)]</span> <span class="o">=</span> <span class="c1"># TODO: compute the median flat</span>
+<span class="k">for</span> <span class="nb">filter</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;flat&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="n">all_normed_flats</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">time</span><span class="p">,</span> <span class="n">flats</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;flat&#39;</span><span class="p">][</span><span class="nb">filter</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">corrected_flats</span> <span class="o">=</span> <span class="c1"># TODO: subtract average bias and corresponding dark from each flat</span>
+        <span class="n">normed_flats</span> <span class="o">=</span> <span class="c1"># TODO: normalize flats so that they have a median value of 1.0 (hint: use axis=(1,2) and keepdims=True)</span>
+        <span class="n">all_normed_flats</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">normed_flats</span><span class="p">)</span>
+    <span class="n">all_normed_flats</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">all_normed_flats</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">median_flats</span><span class="p">[</span><span class="nb">filter</span><span class="p">]</span> <span class="o">=</span> <span class="c1"># TODO: compute the median flat for each filter</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p><strong>Question: Why do we use the median for the flats but average for darks and biases?</strong></p>
+<p>Answer:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: Plot the median flat for each filter, like we did for the bias</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="nb">filter</span><span class="p">,</span> <span class="n">flat</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">median_flats</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">flat</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="nb">filter</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -616,28 +649,20 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calibrate all science images</span>
-<span class="n">calibrated_science</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">files</span><span class="p">[</span><span class="s1">&#39;light&#39;</span><span class="p">]:</span>
-    <span class="n">dark</span> <span class="o">=</span> <span class="n">avg_darks</span><span class="p">[</span><span class="n">f</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;EXPTIME&#39;</span><span class="p">]]</span> <span class="c1"># get the right dark for this exposure time</span>
-    <span class="n">flat</span> <span class="o">=</span> <span class="n">avg_flats</span><span class="p">[</span><span class="n">f</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;FILTER&#39;</span><span class="p">]]</span> <span class="c1"># get the right flat for this filter</span>
-    <span class="n">science</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> <span class="c1"># copy the file to avoid modifying the original</span>
-    <span class="n">science</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="c1"># TODO: correct for bias, dark, and flat (hint: two are subtracted, one is divided)</span>
-    <span class="n">calibrated_science</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">science</span><span class="p">)</span>
+<span class="n">calibrated_data</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">defaultdict</span><span class="p">())</span>
+
+<span class="k">for</span> <span class="nb">filter</span><span class="p">,</span> <span class="nb">dict</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;light&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">time</span><span class="p">,</span> <span class="n">lights</span> <span class="ow">in</span> <span class="nb">dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">dark</span> <span class="o">=</span> <span class="c1"># TODO: get the right dark for this exposure time</span>
+        <span class="n">flat</span> <span class="o">=</span> <span class="c1"># TODO: get the right flat for this filter</span>
+        <span class="n">calibrated_lights</span> <span class="o">=</span> <span class="c1"># TODO: correct for bias, dark, and flat (hint: two are subtracted, one is divided)</span>
+        <span class="n">calibrated_data</span><span class="p">[</span><span class="nb">filter</span><span class="p">][</span><span class="n">time</span><span class="p">]</span> <span class="o">=</span> <span class="n">calibrated_lights</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p><strong>Question: In the cell above, which are subtracted, which are divided, and why?</strong></p>
 <p>Answer:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inspect one of the calibrated science images</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">calibrated_science</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">800</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 </section>
 <section id="stacking-images">
@@ -650,32 +675,30 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Coadd the calibrated science images</span>
 <span class="n">coadded_science</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="n">reference_header</span> <span class="o">=</span> <span class="n">calibrated_science</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">calibrated_science</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">header</span> <span class="c1"># choose one header to serve as the reference to project other images onto</span>
-<span class="n">science_filters</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">([</span><span class="n">f</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;FILTER&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">calibrated_science</span><span class="p">])</span> <span class="c1"># get unique science filters from headers</span>
+<span class="n">reference_header</span> <span class="o">=</span> <span class="n">headers</span><span class="p">[</span><span class="s1">&#39;light&#39;</span><span class="p">][</span><span class="s1">&#39;V&#39;</span><span class="p">][</span><span class="mf">30.0</span><span class="p">][</span><span class="mi">10</span><span class="p">]</span> <span class="c1"># choose one header to serve as the reference to project other images onto</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="n">astropy</span><span class="o">.</span><span class="n">wcs</span><span class="o">.</span><span class="n">FITSFixedWarning</span><span class="p">)</span> <span class="c1"># ignore when astropy fixes a FITS file</span>
 
-<span class="k">for</span> <span class="nb">filter</span> <span class="ow">in</span> <span class="n">science_filters</span><span class="p">:</span>
-    <span class="n">science</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">calibrated_science</span> <span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;FILTER&#39;</span><span class="p">]</span><span class="o">==</span><span class="nb">filter</span><span class="p">]</span> <span class="c1"># get all science images with this filter</span>
+<span class="k">for</span> <span class="nb">filter</span> <span class="ow">in</span> <span class="n">calibrated_data</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
 
     <span class="c1"># Create arrays to hold the stacked data and exposure time per pixel</span>
-    <span class="n">stacked_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">science</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-    <span class="n">stacked_footprint</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">science</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="n">stacked_image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">calibrated_data</span><span class="p">[</span><span class="nb">filter</span><span class="p">][</span><span class="mf">30.0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="n">stacked_footprint</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">calibrated_data</span><span class="p">[</span><span class="nb">filter</span><span class="p">][</span><span class="mf">30.0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
     <span class="n">total_exposure</span> <span class="o">=</span> <span class="mi">0</span>
 
-    <span class="c1"># Loop over science images</span>
-    <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">science</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Stacking </span><span class="si">{</span><span class="nb">filter</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">time</span><span class="p">,</span> <span class="n">images</span> <span class="ow">in</span> <span class="n">calibrated_data</span><span class="p">[</span><span class="nb">filter</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">image</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">tqdm</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Filter </span><span class="si">{</span><span class="nb">filter</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">time</span><span class="si">}</span><span class="s1"> s&#39;</span><span class="p">)):</span> <span class="c1"># use tqdm progress bar with custom description</span>
 
-        <span class="k">with</span> <span class="n">warnings</span><span class="o">.</span><span class="n">catch_warnings</span><span class="p">():</span>
-            <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
-            <span class="n">data</span><span class="p">,</span> <span class="n">footprint</span> <span class="o">=</span> <span class="c1"># TODO: reproject the science image into the same coordinates as the reference image (hint: use reproject_interp, look up the documentation)</span>
+            <span class="c1"># TODO: reproject the science image into the same coordinates as the reference image (hint: use reproject_interp, look up the documentation)</span>
+            <span class="o">=</span>
 
-        <span class="c1"># Update stacked arrays</span>
-        <span class="n">stacked_data</span> <span class="o">+=</span> <span class="n">data</span>
-        <span class="n">stacked_footprint</span> <span class="o">+=</span> <span class="n">footprint</span>
-        <span class="n">total_exposure</span> <span class="o">+=</span> <span class="n">s</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;EXPTIME&#39;</span><span class="p">]</span>
+            <span class="c1"># TODO: update the stacked arrays</span>
+            <span class="n">stacked_image</span> <span class="o">+=</span>
+            <span class="n">stacked_footprint</span> <span class="o">+=</span>
+            <span class="n">total_exposure</span> <span class="o">+=</span>
 
     <span class="c1"># TODO: throw away parts of image not covered by all exposures, by setting to np.nan (&quot;not a number&quot;, often used for invalid values)</span>
     <span class="c1"># Hint: the code will look something like a[b!=c] = np.nan, this means set all elements of a where b is not equal to c to np.nan</span>
-     <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+    <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
 
     <span class="c1"># Update header with new exposure time</span>
     <span class="n">new_header</span> <span class="o">=</span> <span class="n">reference_header</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -684,7 +707,7 @@ document.write(`
     <span class="n">new_header</span><span class="p">[</span><span class="s1">&#39;FILTER&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">filter</span>
 
     <span class="c1"># Final stacked HDU</span>
-    <span class="n">coadded_science</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="nb">filter</span><span class="p">)]</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">PrimaryHDU</span><span class="p">(</span><span class="n">stacked_data</span><span class="p">,</span> <span class="n">new_header</span><span class="p">)</span>
+    <span class="n">coadded_science</span><span class="p">[</span><span class="nb">filter</span><span class="p">]</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">PrimaryHDU</span><span class="p">(</span><span class="n">stacked_image</span><span class="p">,</span> <span class="n">new_header</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -694,7 +717,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot coadded science images, use log scale to see fainter features</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="nb">filter</span><span class="p">,</span> <span class="n">hdu</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">coadded_science</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
     <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">hdu</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nanpercentile</span><span class="p">(</span><span class="n">hdu</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">),</span> <span class="n">vmax</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nanpercentile</span><span class="p">(</span><span class="n">hdu</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="mf">99.9</span><span class="p">),</span> <span class="n">norm</span><span class="o">=</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
     <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="nb">filter</span><span class="p">)</span>
@@ -708,7 +731,7 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># If you want, the code below will save the coadded images to wherever you specify</span>
 <span class="c1"># for filter in coadded_science.keys():</span>
 <span class="c1">#     hdul = fits.HDUList([coadded_science[filter]])</span>
-<span class="c1">#     hdul.writeto(os.path.join(&#39;&lt;INSER FOLDER PATH HERE&gt;&#39;, &#39;coadded_{}_{}_{:.0f}s_{}.fit&#39;.format(object_name, filter, coadded_science[filter].header[&#39;EXPTIME&#39;], date_string)), overwrite=True)</span>
+<span class="c1">#     hdul.writeto(os.path.join(&#39;&lt;INSERT FOLDER PATH HERE&gt;&#39;, &#39;coadd_{}_{}_{:.0f}s_{}.fit&#39;.format(object_name, filter, coadded_science[filter].header[&#39;EXPTIME&#39;], date_string)), overwrite=True)</span>
 </pre></div>
 </div>
 </div>
@@ -721,7 +744,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create composite image</span>
-<span class="n">composite</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">coadded_science</span><span class="p">[</span><span class="n">f</span><span class="p">]</span><span class="o">.</span><span class="n">data</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;V&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">]],</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># missing R filter, so use V again</span>
+<span class="n">composite</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">coadded_science</span><span class="p">[</span><span class="n">f</span><span class="p">]</span><span class="o">.</span><span class="n">data</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;R&#39;</span><span class="p">,</span><span class="s1">&#39;V&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">]],</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">clip_min</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanpercentile</span><span class="p">(</span><span class="n">composite</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># minimum at 80th percentile</span>
 <span class="n">clip_max</span> <span class="o">=</span> <span class="c1"># TODO: Set the maximum at a percentile that looks good</span>
 <span class="n">composite</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">composite</span><span class="p">,</span> <span class="n">clip_min</span><span class="p">,</span> <span class="n">clip_max</span><span class="p">)</span>
@@ -737,7 +760,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p><strong>Question: What do you notice in your final composite image? No right or wrong answer here!</strong></p>
+<p><strong>Question: What do you notice in your final composite image? No right or wrong answer here and questions are as good as answers!</strong></p>
 <p>Answer:</p>
 </section>
 <section id="addendum-plate-solve-with-astap-no-work-required-here">
@@ -791,7 +814,7 @@ You can find a detailed index of ASTAP functions via their <a class="reference e
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="lab01.html"
+       href="lab_0.1.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
@@ -804,7 +827,7 @@ You can find a detailed index of ASTAP functions via their <a class="reference e
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Introduction to Python</p>
+        <p class="prev-next-title">Introduction to Python and FITS</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

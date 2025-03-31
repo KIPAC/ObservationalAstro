@@ -1,14 +1,20 @@
 # Class Schedule
 ```{div} full-width
 
-This is an approximate schedule and is subject to change!
-TAs will also hold regular office hours on Friday 9:30 - 10:20 am in STLC 104 (same as computer lab).
-We will schedule another time for office hours after polling the class.
+This is an approximate schedule and we will update it as things change! Remember to keep an eye out for Canvas announcements.
+
+**Lecture:** Monday/Wednesday 5:30 pm - 6:20 pm  in STLC 119
+<br>
+**Computer Lab:** Friday 11:30 am - 1:20 pm in STLC 104
+<br>
+**Observing:** Wednesday (or weather backup Thursday) sometime between 8:00 pm and 12:00 am at the [Stanford Student Observatory](https://maps.app.goo.gl/Q74TUGyVprn4JmZKA)
+<br>
+**Office hours:** Friday 9:30 am - 10:20 am in STLC 104, same as computer lab. We will add a second time after polling the class.
 
 Week                    | Lectures                                                                                                                      | Lab                        | Observing         | Assignments
 ------------------------|-------------------------------------------------------------------------------------------------------------------------------|----------------------------|-------------------|-------------
-Week 1 <br> (3/31-4/4)  | Syllabus and Course Goals                          <br> Navigating the Night Sky                                              | Intro to Python, Lab 0.2   | Pretty pictures   | 🔥 **Lab 0.0 due before observing** <br> 🔥 **Lab 0.1-0.2 due 4/5 at 11:59 pm**
-Week 2 <br> (4/7-4/11)  | Telescopes                                         <br> Detectors: CCD Imaging and Data Reduction                             ||
+Week 1 <br> (3/31-4/4)  | Syllabus and Course Goals                          <br> Navigating the Night Sky                                              | Intro to Python, Lab 0.2   | Pretty pictures   |🔥 **Lab 0.0 due before observing** <br> 🔥 **Lab 0.1 due 4/5 at 11:59 pm**
+Week 2 <br> (4/7-4/11)  | Telescopes                                         <br> Detectors: CCD Imaging and Data Reduction                             |                            |                   |🔥 **Lab 0.2 due before observing**
 Week 3 <br> (4/14-4/18) | A Sense of Scale                                   <br> The Properties of Stars                                               ||
 Week 4 <br> (4/21-4/25) | Main Sequence; Introduction to Final Projects      <br> Star Clusters and Variables; Talks and Reports                        ||
 Week 5 <br> (4/28-5/2)  | Random and Systematic Errors; Measurement          <br> Binomial,&nbsp;Poisson,&nbsp;Gaussian;&nbsp;Error&nbsp;Propagation    ||

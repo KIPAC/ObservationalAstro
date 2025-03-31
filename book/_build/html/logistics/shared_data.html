@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'logistics/shared_data';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Introduction to Python" href="../labs/python_tutorial.html" />
+    <link rel="next" title="Lab 0.0: Observing Basics" href="../labs/lab_0.0.html" />
     <link rel="prev" title="Observing Schedule" href="observing_schedule.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -187,10 +187,13 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lab 0</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../labs/python_tutorial.html">Introduction to Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../labs/lab00.html">Lab 0.0: Observing Basics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../labs/lab01.html">Lab 0.1: The Night Sky</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../labs/lab02.html">Lab 0.2: Calibration, Stacking, and Pretty Pictures!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../labs/lab_0.0.html">Lab 0.0: Observing Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../labs/lab_0.1.html">Lab 0.1: The Night Sky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../labs/lab_0.2.html">Lab 0.2: Calibration, Stacking, and Pretty Pictures!</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Other Resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../labs/python_tutorial.html">Introduction to Python and FITS</a></li>
 </ul>
 
     </div>
@@ -390,8 +393,9 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="shared-data">
 <h1>Shared Data<a class="headerlink" href="#shared-data" title="Link to this heading">#</a></h1>
-<p>Astronomy benefits from a culture of sharing data, and many discoveries are made using publicly accessible data archives. We will be building our own community archive during this class in the form of a shared Google Drive folder, which we will link shortly. We recommend making a shortcut to this folder in your own Google Drive, <strong>ideally directly in <code class="docutils literal notranslate"><span class="pre">My</span> <span class="pre">Drive</span></code> rather than a subfolder</strong>, so that the data can be easily accessed from Google Colab with the same path for everyone.</p>
-<p>Managing files can quickly become <em>very tedious</em> in this class, especially when sharing data between groups, so we will follow a standard structure for the shared folder. Science exposures will be placed in <code class="docutils literal notranslate"><span class="pre">&lt;object_name&gt;/&lt;observation_date&gt;</span></code> with filter and exposure time information in the file name. Calibration files will be placed in <code class="docutils literal notranslate"><span class="pre">calibration/&lt;observation_date&gt;</span></code> with prefixes <code class="docutils literal notranslate"><span class="pre">flat_</span></code>, <code class="docutils literal notranslate"><span class="pre">dark_</span></code>, and <code class="docutils literal notranslate"><span class="pre">bias_</span></code>. Files from a night of observing M3 last year are already there as an example, please take a quick look. We provide a nice way to load and process files from this structure using Python dictionaries in Lab 0.2. It pays to be organized here!</p>
+<p>Astronomy benefits from a culture of sharing data, and many discoveries are made using publicly accessible data archives. We will be building our own community archive during this class in the form of a shared Google Drive folder. We recommend making a shortcut to this folder in your own Google Drive, <strong>ideally directly in <code class="docutils literal notranslate"><span class="pre">My</span> <span class="pre">Drive</span></code> rather than a subfolder</strong>, so that the data can be easily accessed from Google Colab with the same path for everyone.</p>
+<p><strong>The shared Google Drive folder is <a class="reference external" href="https://drive.google.com/drive/folders/1BZ1Dcfbq3Uc8_xyb6rxHeSY-Jjhz8sNh">here</a>.</strong></p>
+<p>Managing files can quickly become <em>very tedious</em> in this class, especially when sharing data between groups, so we will follow a standard structure for the shared folder. Science exposures will be placed in <code class="docutils literal notranslate"><span class="pre">data/&lt;object_name&gt;/&lt;observation_date&gt;/&lt;telescope&gt;/</span></code> with filter and exposure time information in the file name. Calibration files will be placed in <code class="docutils literal notranslate"><span class="pre">data/calibration/&lt;observation_date&gt;/&lt;telescope&gt;/</span></code> with prefixes <code class="docutils literal notranslate"><span class="pre">flat_</span></code>, <code class="docutils literal notranslate"><span class="pre">dark_</span></code>, and <code class="docutils literal notranslate"><span class="pre">bias_</span></code>. Files from a night of observing M51 last year are already there as an example, please take a quick look. (Note: we cheated and pulled darks from a nearby night… don’t do this!) We provide a nice way to load and process files from this structure using Python dictionaries in Lab 0.2. It pays to be organized here!</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -434,11 +438,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="../labs/python_tutorial.html"
+       href="../labs/lab_0.0.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Introduction to Python</p>
+        <p class="prev-next-title">Lab 0.0: Observing Basics</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

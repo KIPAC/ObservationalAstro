@@ -1,6 +1,6 @@
 # Lab 0.1: The Night Sky
 
-*Due: Saturday, April 5 at 11:59 PM*
+*Due: Saturday, April 5 at 11:59 PM.*
 
 This lab delves deeper into the night sky. By the end of this lab, you will be able to:
  - use planetarium software to simulate the night sky
@@ -8,28 +8,26 @@ This lab delves deeper into the night sky. By the end of this lab, you will be a
 
 ## Simulating the Night Sky
 
-Use the [Stellarium](http://www.stellarium.org/) planetarium software to view the night sky as it will appear during your next observing session (April 9) and over the course of a year. Answer the questions below.
+Use the [Stellarium](http://www.stellarium.org/) planetarium software to view the night sky as it will appear during your next observing session on April 9 and over the course of a year. Answer the questions below.
   
 1. When does the Sun set? Recalling how light scatters in the atmosphere, qualitatively describe when astronomical observations can start.
 2. When does the Moon set and rise? What phase is the Moon in?
 3. List 5 visible constellations.
 4. What direction do they appear to move as the night progresses?
-5. Identify 3 additional constellations that you can see now, but which you will not be able to see in half a year. How does this relate to their position on the sky? 
+5. Identify 3 additional constellations that you can see now, but which you will not be able to see in half a year. Identify 3 which will still be visible. How does this relate to their position on the sky? 
 6. Can the motion of the Moon with respect to the background stars be observed during this 2 hour period? 
 7. Estimate the Moon's apparent speed with respect to the background stars in arcminutes per hour. To do this, you can either use Stellarium, or your knowledge about the motions of the Moon and the sky. Provide an answer for this question even if the Moon is not visible during this particular observing session. 
 8. What planets are visible?
 9. What right ascension is overhead (at zenith) when your observing session starts and when it ends? 
-10. Tabulate the change in the phase of the Moon and its rise time for each Wednesday observing lab through the whole quarter (April 9 - Mid June). Qualitatively explain any patterns that you observe.
-11. Compare the night sky on April 9 and June 12. Which zodiacal constellations have disappeared and which have emerged? List 2 of each, and list 3 constellations that have remained visible throughout the quarter.
+10. Tabulate the change in the phase of the Moon and its rise time for each Wednesday observing lab through the whole quarter (April 9 - early June). Qualitatively explain any patterns that you observe.
 
 
 ## Exploring the Night Sky's Contents
 
-Select one object from the [Messier catalogue](http://en.wikipedia.org/wiki/List_of_Messier_objects) or one image from the [Astronomy Picture of the
-Day](http://apod.nasa.gov) that features an object observable with a small telescope.
+Select one object from the [Messier catalogue](http://en.wikipedia.org/wiki/List_of_Messier_objects) or one image from the [Astronomy Picture of the Day](http://apod.nasa.gov) that features an object observable with a small telescope.
 
-12. Copy and cite a brief summary of the object from the internet.
-13. Write down at least three scientific questions that you have about the image or object.
+11. Copy and cite a brief summary of the object from the internet.
+12. Write down at least three scientific questions that you have about the image or object. Which of these do you think could be answered using one of the telescopes Stanford Student Observatory?
 
 ## Optional Background Reading
 

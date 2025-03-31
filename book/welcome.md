@@ -8,12 +8,18 @@ will explore and practice how astronomers take projects from initial ideas, thro
 collection and analysis, to write-up and presentation. Topics in lecture will include: 
 navigating the night sky, telescope instrumentation and operation, the physics of stars 
 and galaxies, statistical analysis, and effective scientific communication. We will also 
-introduce several 'hot topics' in astrophysics and cosmology.
+introduce several hot topics in astrophysics and cosmology.
 
-The purpose of this website is to
+The purpose of this website is to:
  - provide up-to-date schedules for observing nights, labs, lectures, and the final project
- - host Jupyter Notebooks for the labs, which can easily be opened with Google Colab
+ - host assignments: Jupyter Notebooks can be easily opened with Google Colab
  - link additional resources which may prove useful as the course progresses
+ - show off the awesome things we do with the Stanford Student Observatory
+
+Important things not on the website are:
+ - Canvas announcements
+ - Google Drive folder for shared data [here](https://drive.google.com/drive/folders/1BZ1Dcfbq3Uc8_xyb6rxHeSY-Jjhz8sNh)
+ - Solutions for assignments
 
 ```{tableofcontents}
 ```

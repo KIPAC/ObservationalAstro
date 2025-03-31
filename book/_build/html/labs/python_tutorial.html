@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Introduction to Python &#8212; Observational Astrophysics (Physics 100)</title>
+    <title>Introduction to Python and FITS &#8212; Observational Astrophysics (Physics 100)</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -60,8 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'labs/python_tutorial';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Lab 0.0: Observing Basics" href="lab00.html" />
-    <link rel="prev" title="Shared Data" href="../logistics/shared_data.html" />
+    <link rel="prev" title="Lab 0.2: Calibration, Stacking, and Pretty Pictures!" href="lab_0.2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -186,11 +185,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../logistics/shared_data.html">Shared Data</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lab 0</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="lab_0.0.html">Lab 0.0: Observing Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab_0.1.html">Lab 0.1: The Night Sky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab_0.2.html">Lab 0.2: Calibration, Stacking, and Pretty Pictures!</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Other Resources</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction to Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lab00.html">Lab 0.0: Observing Basics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lab01.html">Lab 0.1: The Night Sky</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lab02.html">Lab 0.2: Calibration, Stacking, and Pretty Pictures!</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction to Python and FITS</a></li>
 </ul>
 
     </div>
@@ -405,7 +407,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Introduction to Python</h1>
+    <h1>Introduction to Python and FITS</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -419,12 +421,11 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-python">
-<h1>Introduction to Python<a class="headerlink" href="#introduction-to-python" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-python-and-fits">
+<h1>Introduction to Python and FITS<a class="headerlink" href="#introduction-to-python-and-fits" title="Link to this heading">#</a></h1>
 <p><em>We will complete this notebook in the first computer lab on Friday, April 4. It does not need to be submitted to Canvas.</em></p>
-<p><strong>Goals:</strong> Understand how to use Python to make plots of data and handle FITS files.</p>
+<p><strong>Goals:</strong> Understand how to use Python to make plots of data and handle FITS files. Work with data in Google Drive using Google Colab.</p>
 <p><strong>Authors:</strong> Sebastian Wagner-Carena, Justin Myles, Modified by Anthony Flores and Brianna Cantrall</p>
-<p>This is a tutorial of Python and how to access data with Google Colab. Students do not need to turn this exercise in.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello, world!&#39;</span><span class="p">)</span>
@@ -777,22 +778,13 @@ WARNING = &#39;Warning inexact scale! Set FOV=0.30d or scale=0.7&quot;/pix or FL
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../logistics/shared_data.html"
+       href="lab_0.2.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Shared Data</p>
+        <p class="prev-next-title">Lab 0.2: Calibration, Stacking, and Pretty Pictures!</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="lab00.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Lab 0.0: Observing Basics</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>

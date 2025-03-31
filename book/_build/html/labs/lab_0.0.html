@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Lab 0.1: The Night Sky &#8212; Observational Astrophysics (Physics 100)</title>
+    <title>Lab 0.0: Observing Basics &#8212; Observational Astrophysics (Physics 100)</title>
   
   
   
@@ -57,11 +57,13 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'labs/lab01';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'labs/lab_0.0';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Lab 0.2: Calibration, Stacking, and Pretty Pictures!" href="lab02.html" />
-    <link rel="prev" title="Lab 0.0: Observing Basics" href="lab00.html" />
+    <link rel="next" title="Lab 0.1: The Night Sky" href="lab_0.1.html" />
+    <link rel="prev" title="Shared Data" href="../logistics/shared_data.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -187,13 +189,13 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lab 0</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="lab00.html">Lab 0.0: Observing Basics</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lab 0.1: The Night Sky</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lab02.html">Lab 0.2: Calibration, Stacking, and Pretty Pictures!</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lab 0.0: Observing Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab_0.1.html">Lab 0.1: The Night Sky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab_0.2.html">Lab 0.2: Calibration, Stacking, and Pretty Pictures!</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Other Resources</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="python_tutorial.html">Introduction to Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_tutorial.html">Introduction to Python and FITS</a></li>
 </ul>
 
     </div>
@@ -265,7 +267,7 @@
       
       
       
-      <li><a href="https://github.com/KIPAC/ObservationalAstro/issues/new?title=Issue%20on%20page%20%2Flabs/lab01.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/KIPAC/ObservationalAstro/issues/new?title=Issue%20on%20page%20%2Flabs/lab_0.0.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -295,7 +297,7 @@
       
       
       
-      <li><a href="../_sources/labs/lab01.md" target="_blank"
+      <li><a href="../_sources/labs/lab_0.0.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -379,7 +381,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Lab 0.1: The Night Sky</h1>
+    <h1>Lab 0.0: Observing Basics</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -389,9 +391,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-the-night-sky">Simulating the Night Sky</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-the-night-sky-s-contents">Exploring the Night Sky’s Contents</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-background-reading">Optional Background Reading</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#before-arriving-at-the-observatory">Before Arriving at the Observatory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#at-the-observatory">At the Observatory</a></li>
 </ul>
             </nav>
         </div>
@@ -403,52 +404,45 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="lab-0-1-the-night-sky">
-<h1>Lab 0.1: The Night Sky<a class="headerlink" href="#lab-0-1-the-night-sky" title="Link to this heading">#</a></h1>
-<p><em>Due: Saturday, April 5 at 11:59 PM</em></p>
-<p>This lab delves deeper into the night sky. By the end of this lab, you will be able to:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="lab-0-0-observing-basics">
+<h1>Lab 0.0: Observing Basics<a class="headerlink" href="#lab-0-0-observing-basics" title="Link to this heading">#</a></h1>
+<p><em>Due: Wednesday, April 2 before arriving at the observatory.</em></p>
+<p>This lab introduces the fundamentals of using a telescope to take images. By the end of this lab, you will be able to:</p>
 <ul class="simple">
-<li><p>use planetarium software to simulate the night sky</p></li>
-<li><p>describe how the night sky changes over short and long time periods</p></li>
+<li><p>identify key constellations and stars, the ecliptic, and describe how the Moon, the Sun, planets and stars appear to move during the course of the night</p></li>
+<li><p>detail the criteria an object has to meet to be considered observable</p></li>
+<li><p>locate and image an astronomical object with a camera through multiple filters</p></li>
 </ul>
-<section id="simulating-the-night-sky">
-<h2>Simulating the Night Sky<a class="headerlink" href="#simulating-the-night-sky" title="Link to this heading">#</a></h2>
-<p>Use the <a class="reference external" href="http://www.stellarium.org/">Stellarium</a> planetarium software to view the night sky as it will appear during your next observing session (April 9) and over the course of a year. Answer the questions below.</p>
+<section id="before-arriving-at-the-observatory">
+<h2>Before Arriving at the Observatory<a class="headerlink" href="#before-arriving-at-the-observatory" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>When does the Sun set? Recalling how light scatters in the atmosphere, qualitatively describe when astronomical observations can start.</p></li>
-<li><p>When does the Moon set and rise? What phase is the Moon in?</p></li>
-<li><p>List 5 visible constellations.</p></li>
-<li><p>What direction do they appear to move as the night progresses?</p></li>
-<li><p>Identify 3 additional constellations that you can see now, but which you will not be able to see in half a year. How does this relate to their position on the sky?</p></li>
-<li><p>Can the motion of the Moon with respect to the background stars be observed during this 2 hour period?</p></li>
-<li><p>Estimate the Moon’s apparent speed with respect to the background stars in arcminutes per hour. To do this, you can either use Stellarium, or your knowledge about the motions of the Moon and the sky. Provide an answer for this question even if the Moon is not visible during this particular observing session.</p></li>
-<li><p>What planets are visible?</p></li>
-<li><p>What right ascension is overhead (at zenith) when your observing session starts and when it ends?</p></li>
-<li><p>Tabulate the change in the phase of the Moon and its rise time for each Wednesday observing lab through the whole quarter (April 9 - Mid June). Qualitatively explain any patterns that you observe.</p></li>
-<li><p>Compare the night sky on April 9 and June 12. Which zodiacal constellations have disappeared and which have emerged? List 2 of each, and list 3 constellations that have remained visible throughout the quarter.</p></li>
-</ol>
-</section>
-<section id="exploring-the-night-sky-s-contents">
-<h2>Exploring the Night Sky’s Contents<a class="headerlink" href="#exploring-the-night-sky-s-contents" title="Link to this heading">#</a></h2>
-<p>Select one object from the <a class="reference external" href="http://en.wikipedia.org/wiki/List_of_Messier_objects">Messier catalogue</a> or one image from the <a class="reference external" href="http://apod.nasa.gov">Astronomy Picture of the
-Day</a> that features an object observable with a small telescope.</p>
-<ol class="arabic simple" start="12">
-<li><p>Copy and cite a brief summary of the object from the internet.</p></li>
-<li><p>Write down at least three scientific questions that you have about the image or object.</p></li>
-</ol>
-</section>
-<section id="optional-background-reading">
-<h2>Optional Background Reading<a class="headerlink" href="#optional-background-reading" title="Link to this heading">#</a></h2>
+<li><p>Select one object that you would like to observe at the telescope from the Messier catalog (<a class="reference external" href="http://en.wikipedia.org/wiki/List_of_Messier_objects">here</a> or <a class="reference external" href="http://messier.seds.org/">here</a>) and/or from the seven non-Earth planets
+in the solar system.</p></li>
+<li><p>Use Wikipedia, SEDS, Wolfram-Alpha or planetarium software to find the current positions (RA or Right Ascension and DEC or Declination), angular sizes, and respective brightness of the objects. We <strong>highly recommend</strong> using the planetarium software <a class="reference external" href="http://www.stellarium.org/">Stellarium</a> for this since you will be using it at the observatory. There are a couple of pointers to help you with your choice:</p>
 <ul class="simple">
-<li><p>Astronomy Coordinate Systems: For more information on Altitude/Azimuth and Right Ascension/Declination, check out <a class="reference external" href="https://web.archive.org/web/20190819025240/https://dept.astro.lsa.umich.edu/resources/ugactivities/Labs/coords/index.html">University of Michigan Astronomy Department: Introduction to Astronomical Coordinate Systems</a></p></li>
-<li><p>Constellations: Google is your quickest resource for finding out about the stars and objects within each constellation and its mythological history. You can also check out a field guide, such as \emph{Stars and Planets} by Ian Ridpath and Wil Tirion. Additional resources:</p>
-<ul>
-<li><p><a class="reference external" href="http://www.dibonsmith.com/constel.htm">http://www.dibonsmith.com/constel.htm</a></p></li>
-<li><p><a class="reference external" href="http://en.wikipedia.org/wiki/Lists_of_constellations">http://en.wikipedia.org/wiki/Lists_of_constellations</a></p></li>
-<li><p><a class="reference external" href="http://www.heavens-above.com/">http://www.heavens-above.com/</a></p></li>
+<li><p>Keep in mind that your objects have to fit in the respective fields of view (FOV) of the telescopes. The FOV of both the 0.7 m and the 24” telescope is <span class="math notranslate nohighlight">\(27'\times18'\)</span> (the CCDs have <span class="math notranslate nohighlight">\(9576\times6388\)</span> pixels, or <span class="math notranslate nohighlight">\(0.17\)</span> arcsec each)</p></li>
+<li><p>Even though a particular object is above the horizon, it might not be visible due to the terrain obstacles at the observatory. In general, the closer to the zenith, the better. As a rule of thumb, objects with altitude less than <span class="math notranslate nohighlight">\(\sim30^{\circ}\)</span> will be obscured for the 0.7 m by trees and the 24” dome. The planetarium software will give you the object’s altitude if you change your location to Stanford.</p></li>
+<li><p>Brighter is not always better! The shortest exposure time you can achieve with the CCDs at the Student Observatory is <span class="math notranslate nohighlight">\(\sim0.1\)</span> s, which, for some objects, like those with negative magnitudes, is still enough to saturate the CCD and render your observations useless. A good rule of thumb is that the object should not be visible to the naked eye. (You can read more online about magnitudes. In short, they are a system for expressing the brightness of various objects. The lower the magnitude of an object, the brighter it is. The full Moon has a magnitude of about -12, the star Vega is 0, and you can see objects down to about 6th magnitude with your naked eye.)</p></li>
 </ul>
 </li>
+<li><p>Use the <a class="reference external" href="https://astro.ing.iac.es/staralt/">Object Visibility webpage</a> to plot the object paths for your observing night. Set
+the Observatory to “Lick Observatory,” just East of San Jose. Enter the coordinates for your target. Make sure you see a line, otherwise pick a different target! Save a copy of the images made in <code class="docutils literal notranslate"><span class="pre">staralt</span></code> and <code class="docutils literal notranslate"><span class="pre">startrack</span></code> modes, and either print or download to a device you will bring to the observatory. Write down the angular size and brightness of each object somewhere on the page.</p></li>
+<li><p>Most targets can be difficult to identify at the observatory. The object database at the observatory may not contain certain object names either. To prepare for observing, use the <a class="reference external" href="https://irsa.ipac.caltech.edu/applications/finderchart">IRSA finder chart software</a> to save a PDF “finder chart” of the object. The chart should contain at least twice the area of the FOV and should have clear scales in arcminutes.</p></li>
+<li><p>Read the very short passages about calibration in Lab 0.3. You will need to have a basic understanding of darks, flats, and biases for your first night of observing.</p></li>
+</ol>
+</section>
+<section id="at-the-observatory">
+<h2>At the Observatory<a class="headerlink" href="#at-the-observatory" title="Link to this heading">#</a></h2>
+<p>Arrive at the Observatory early to familiarize yourself with the night sky. Be prepared to discuss the questions below. If you have time, answering some of them at home with the help of Stellarium would be great! No need to write down the answers to these.</p>
+<ul class="simple">
+<li><p>Which way is North? East?</p></li>
+<li><p>What do you observe about the quality of the night sky and the horizon at the Observatory? What may affect observations?</p></li>
+<li><p>Where is the ecliptic on the sky? Are there any planets visible?</p></li>
+<li><p>Identify some constellations. Which constellations are overhead or at the eastern and western horizons?</p></li>
+<li><p>Over the course of the evening, can you detect any motion in the stars and the Moon? Which direction are they moving?</p></li>
 </ul>
+<p>The TA will walk you through the telescope operations to acquire an image of an object. As time permits, observe your preselected objects in three filters
+(blue, green, and red). We will use astrometric stacking software (e.g. ASTAP; described in Lab 0.2) to add information to your images that will allow us to readily add them together. In the later parts of Lab 0, we will combine them to make a color image for the object you observed. Detailed directions will be provided at the observatory and the Computer Lab.</p>
 </section>
 </section>
 
@@ -483,20 +477,20 @@ Day</a> that features an object observable with a small telescope.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="lab00.html"
+       href="../logistics/shared_data.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Lab 0.0: Observing Basics</p>
+        <p class="prev-next-title">Shared Data</p>
       </div>
     </a>
     <a class="right-next"
-       href="lab02.html"
+       href="lab_0.1.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Lab 0.2: Calibration, Stacking, and Pretty Pictures!</p>
+        <p class="prev-next-title">Lab 0.1: The Night Sky</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -516,9 +510,8 @@ Day</a> that features an object observable with a small telescope.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-the-night-sky">Simulating the Night Sky</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-the-night-sky-s-contents">Exploring the Night Sky’s Contents</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-background-reading">Optional Background Reading</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#before-arriving-at-the-observatory">Before Arriving at the Observatory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#at-the-observatory">At the Observatory</a></li>
 </ul>
   </nav></div>
 
