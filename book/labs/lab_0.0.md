@@ -1,6 +1,6 @@
 # Lab 0.0: Observing Basics
 
-*Due: Wednesday, April 2 at 5:00 pm.*
+*Due: Wednesday, April 2 before observing. No need to submit to Canvas, just bring it to the observatory.*
 
 This lab introduces the fundamentals of using a telescope to take images. By the end of this lab, you will be able to:
  - identify key constellations and stars, the ecliptic, and describe how the Moon, the Sun, planets and stars appear to move during the course of the night
