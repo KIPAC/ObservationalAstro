@@ -19,7 +19,7 @@ The purpose of this website is to:
 Important things not on the website are:
  - Canvas announcements
  - Google Drive folder for shared data [here](https://drive.google.com/drive/folders/1BZ1Dcfbq3Uc8_xyb6rxHeSY-Jjhz8sNh)
- - Solutions for assignments
+ - Assignment submission (use Canvas) and posted solutions
 
 ```{tableofcontents}
 ```
