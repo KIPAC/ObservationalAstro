@@ -9,7 +9,7 @@ This is an approximate schedule and we will update it as things change! Remember
 <br>
 **Observing:** Wednesday (or weather backup Thursday) between sunset and midnight at the [Stanford Student Observatory](https://maps.app.goo.gl/Q74TUGyVprn4JmZKA)
 <br>
-**Office hours:** Tuesday 4:30 - 5:20 pm in PAB 241. Friday 9:30 am - 10:20 am in STLC 104, same as computer lab.
+**Office hours:** Tuesday 4:30 - 5:20 pm in Varian 206. Friday 9:30 am - 10:20 am in STLC 104, same as computer lab.
 
 Week                    | Lectures                                                                                                                      | Lab                           | Observing         | Assignments
 ------------------------|-------------------------------------------------------------------------------------------------------------------------------|-------------------------------|-------------------|-----------------------------------------------------------------------------
