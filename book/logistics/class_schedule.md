@@ -3,8 +3,6 @@
 
 This is an approximate schedule and we will update it as things change! Remember to keep an eye out for Canvas announcements.
 
-Test auto-publish action.
-
 **Lecture:** Monday/Wednesday 5:30 pm - 6:20 pm  in STLC 119
 <br>
 **Computer Lab:** Friday 11:30 am - 1:20 pm in STLC 104
