@@ -21,7 +21,7 @@ in the solar system.
 3. Use the [Object Visibility webpage](https://astro.ing.iac.es/staralt/) to plot the object paths for your observing night. Set 
 the Observatory to "Lick Observatory," just East of San Jose. Enter the coordinates for your target. Make sure you see a line, otherwise pick a different target! Save a copy of the images made in `staralt` and `startrack` modes, and either print or download to a device you will bring to the observatory. Write down the angular size and brightness of each object somewhere on the page.
 
-4. Most targets can be difficult to identify at the observatory. The object database at the observatory may not contain certain object names either. To prepare for observing, use the [IRSA finder chart software](https://irsa.ipac.caltech.edu/applications/finderchart) to save a PDF "finder chart" of the object. The chart should contain at least twice the area of the FOV and should have clear scales in arcminutes.
+4. Most targets can be difficult to identify at the observatory. The object database at the observatory may not contain certain object names either. To prepare for observing, use the [Aladin applet](https://aladin.cds.unistra.fr/AladinLite/) or the [IRSA finder chart software](https://irsa.ipac.caltech.edu/applications/finderchart) to save a PDF "finder chart" of the object. The chart should contain at least twice the area of the FOV and should have clear scales in arcminutes.
 
 5. Read the very short passages about calibration in Lab 0.3. You will need to have a basic understanding of darks, flats, and biases for your first night of observing.
 
