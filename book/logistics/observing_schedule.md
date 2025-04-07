@@ -5,9 +5,9 @@ Changes will be announced on Canvas and updated here.
 ## Wednesday 4/9
 | Time Slot         | 0.7 m               | 24 inch              | Object        
 |-------------------|---------------------|----------------------|---------------
-| 7:30 - 9:00 PM    | Team 1 (NA, BC)     | Team 2 (JY, OR, PG)  | Calibration, M35
-| 9:00 - 9:45 PM    |                     | Team 5 (EJ, MM, LZ)  | M35
-| 9:45 - 10:30 PM   | Team 4 (KG, CX, KT) | Team 3 (EK, HO, JW)  | M3
+| 7:30 - 9:00 PM    | Team _ (NA, BC)     | Team _ (JY, OR, PG)  | Calibration, M35
+| 9:00 - 9:45 PM    |                     | Team _ (EJ, MM, LZ)  | M35
+| 9:45 - 10:30 PM   | Team _ (KG, CX, KT) | Team _ (EK, HO, JW)  | M3
 
 
 ## Wednesday 4/2
