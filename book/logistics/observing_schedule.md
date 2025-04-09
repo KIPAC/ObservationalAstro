@@ -3,6 +3,7 @@
 Changes will be announced on Canvas and updated here.
 
 ## Wednesday 4/9
+*Note: If your team is coming up later, keep an eye on your email. If it's cloudy we may cancel.*
 | Time Slot         | 0.7 m               | 24 inch              | Object        
 |-------------------|---------------------|----------------------|---------------
 | 7:30 - 9:00 PM    | Team 1 (NA, BC)     | Team 2 (JY, OR, PG)  | Calibration, M35
