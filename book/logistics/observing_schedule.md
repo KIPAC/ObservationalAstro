@@ -7,8 +7,8 @@ Changes will be announced on Canvas and updated here.
 | Time Slot         | 0.7 m                                 | 24 inch              | Object        
 |-------------------|---------------------------------------|----------------------|---------------
 | 7:30 - 9:00 PM    | The Cosmological Coupling (NA, BC)    | The Local Group (JY, OR, PG) | Calibration, M35
-| 9:00 - 9:45 PM    | The Parsexiest Knights (EJ, MM, LZ)   |                              | M35
-| 9:45 - 10:30 PM   | Galactose Tolerant (EK, HO, JW)       | The All-Seeing (KG, CX, KT)  | M3
+| 9:00 - 9:45 PM    | The (Parsexiest) Observing Knights (EJ, MM, LZ)   |                              | M35
+| 9:45 - 10:30 PM   | Galactose Tolerant (EK, HO, JW)       | All-Seeing (KG, CX, KT)  | M3
 
 
 ## Wednesday 4/2
