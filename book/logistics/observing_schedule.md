@@ -17,7 +17,7 @@ Changes will be announced on Canvas and updated here.
 |-------------------|---------------------------------------|----------------------|---------------
 | 7:30 - 9:00 PM    | Cosmological Coupling                 | The Local Group      | Calibration, M35
 | 9:00 - 9:45 PM    | The (Parsexiest) Observing Knights    |                      | M35
-| 9:45 - 10:30 PM   | Galactose Tolerant                    | All-Seeing           | M3
+| 9:45 - 10:30 PM   | Galactose Tolerant                    | The All-Seeing       | M3
 
 
 ## Wednesday 4/2
