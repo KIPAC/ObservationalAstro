@@ -2,11 +2,20 @@
 
 Changes will be announced on Canvas and updated here.
 
+
+## Wednesday 4/16
+| Time Slot         | 0.7 m                                 | 24 inch                             | Object        
+|-------------------|---------------------------------------|-------------------------------------|---------------
+| 7:45 - 9:00 PM    | The All-Seeing                        | Galactose Tolerant                  | Calibration, M35
+| 9:00 - 9:45 PM    |                                       | Cosmological Coupling               | M35
+| 9:45 - 10:30 PM   | The Local Group                       | The (Parsexiest) Observing Knights  | M3
+
+
 ## Wednesday 4/9
 *Note: If your team is coming up later, keep an eye on your email. If it's cloudy we may cancel.*
 | Time Slot         | 0.7 m                                 | 24 inch              | Object        
 |-------------------|---------------------------------------|----------------------|---------------
-| 7:30 - 9:00 PM    | The Cosmological Coupling             | The Local Group      | Calibration, M35
+| 7:30 - 9:00 PM    | Cosmological Coupling                 | The Local Group      | Calibration, M35
 | 9:00 - 9:45 PM    | The (Parsexiest) Observing Knights    |                      | M35
 | 9:45 - 10:30 PM   | Galactose Tolerant                    | All-Seeing           | M3
 
