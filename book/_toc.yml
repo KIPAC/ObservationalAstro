@@ -17,6 +17,7 @@ parts:
   - caption: "Lab 1"
     chapters:
       - file: labs/lab_1.0
+      - file: labs/lab_1.1
   - caption: "Other Resources"
     chapters:
       - file: labs/python_tutorial
