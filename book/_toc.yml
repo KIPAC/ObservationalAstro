@@ -20,7 +20,7 @@ parts:
       - file: labs/lab_1.1
   - caption: "Final Projects"
     chapters:
-      - file: labs/final_project
+      - file: labs/project_ideas
   - caption: "Other Resources"
     chapters:
       - file: labs/python_tutorial
