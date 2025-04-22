@@ -2,7 +2,7 @@
 
 Changes will be announced on Canvas and updated here.
 
-## Wednesday 4/21
+## Wednesday 4/23
 | Time Slot         | 0.7 m                                 | 24 inch                             | Object        
 |-------------------|---------------------------------------|-------------------------------------|---------------
 | 7:45 - 9:00 PM    | The (Parsecsiest) Observing Knights   | Cosmological Coupling               | Calibration, M35
