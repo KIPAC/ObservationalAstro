@@ -1,7 +1,4 @@
-# Final Projects
-
-
-## Potential Project Topics
+# Potential Project Topics
 
 Imaging:
  - Determining the physical properties of nebulae or nearby spiral galaxies with narrow band imaging (star formation rate, ionization properties, etc.)

@@ -18,6 +18,9 @@ parts:
     chapters:
       - file: labs/lab_1.0
       - file: labs/lab_1.1
+  - caption: "Final Projects"
+    chapters:
+      - file: labs/final_project
   - caption: "Other Resources"
     chapters:
       - file: labs/python_tutorial
