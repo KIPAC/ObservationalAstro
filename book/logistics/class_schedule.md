@@ -21,8 +21,8 @@ Week 5 <br> (4/28-5/2)  | Random and Systematic Errors; Measurement          <br
  Week 6 <br> (5/5-5/7)   | Proposal Presentations                             <br> Proposal Presentations                                               |                               |  Project Observations      |
 Week 7 <br> (5/12-5/16) |   Guest Lecture: What even are gravitational waves?   <br> Model Fitting and Hypothesis Testing                               | Progress Updates              |  Project Observations      |🔥 **Revised proposals due Mon. 5/12 at 5:00 pm**
 Week 8 <br> (5/19-5/23) | Parameter Estimation and Occam's Razor             <br> Maximum Likelihood, Monte Carlo, Bootstrap                            | Progress Updates              |  Project Observations      |
-Week 9 <br> (5/26-5/30) | *Memorial Day, no class*                           <br> Guest Lecture: Cosmology                                              | Progress Updates              |  Project Observations      |
-Week 10 <br> (6/2-6/6)  | Guest Lecture: AXIS vs PRIMA                            <br> *No class*                                                       |                               |                            |
+Week 9 <br> (5/26-5/30) | *Memorial Day, no class*                           <br> Guest Lecture: Bridging the Cosmic Past and Present                                             | Progress Updates              |  Project Observations      |
+Week 10 <br> (6/2-6/6)  | Guest Lecture: Telescope Throwdown: PRIMA and AXIS Enter the Ring                           <br> *No class*                                                       |                               |                            |
 Finals&nbsp;Week        | Independent Project Presentations                  <br> Tuesday 6/10, 7-10 pm                                                 |                               |                            |🔥 **Final written reports due Tue. 6/10 at 7:00 pm**
 
 ```
