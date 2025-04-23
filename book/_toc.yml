@@ -18,6 +18,7 @@ parts:
     chapters:
       - file: labs/lab_1.0
       - file: labs/lab_1.1
+      - file: labs/lab_1.2
   - caption: "Final Project"
     chapters:
       - file: labs/project_ideas
