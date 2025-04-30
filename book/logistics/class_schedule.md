@@ -11,6 +11,16 @@ This is an approximate schedule and we will update it as things change! Remember
 <br>
 **Office hours:** Tuesday 4:30 - 5:20 pm in Varian 206. Friday 9:30 am - 10:20 am in STLC 104, same as computer lab.
 
+## Proposal Presentations
+Monday
+1. JOPE
+2. The All-Seeing
+3. JH
+
+Wednesday
+1. Cosmological Coupling
+2. The Parsecsiest Observing Knights
+
 Week                    | Lectures                                                                                                                      | Lab                           | Observing         | Assignments
 ------------------------|-------------------------------------------------------------------------------------------------------------------------------|-------------------------------|-------------------|-----------------------------------------------------------------------------
 Week 1 <br> (3/31-4/4)  | Syllabus and Course Goals                          <br> Navigating the Night Sky                                              | Intro to Python, Lab 0.2      | Pretty pictures            |🔥 **Lab 0.0 due Wed. 4/2 at 5:00 pm**
