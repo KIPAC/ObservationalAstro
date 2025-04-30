@@ -2,6 +2,14 @@
 
 Changes will be announced on Canvas and updated here.
 
+## Wednesday 4/30
+| Time Slot         | 0.7 m                                 | 24 inch                             | Object        
+|-------------------|---------------------------------------|-------------------------------------|---------------
+| 7:50 - 9:30 PM    | Cosmological Coupling                 | The All-Seeing                      | Calibration, M35
+| 9:30 - 10:30 PM   | JOPE                                  |                                     | M35
+| 10:30 - 11:30 PM  | The (Parsecsiest) Observing Knights    | JH                                  | M3
+
+
 ## Wednesday 4/23
 No observing
  
