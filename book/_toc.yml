@@ -24,4 +24,5 @@ parts:
       - file: labs/project_ideas
   - caption: "Other Resources"
     chapters:
+      - file: spectroscopy/spectroscopy
       - file: labs/python_tutorial
