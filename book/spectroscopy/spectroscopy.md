@@ -4,4 +4,4 @@
 
 [ArNe lamp spectrum](SpectreArNeLISA.pdf)
 
-[Notes on reducing spectra with data](spectroscopy-reduction-handout.pdf)
+[Notes on reducing spectra from previous year (with IRAF)](spectroscopy-reduction-handout.pdf)
