@@ -4,6 +4,7 @@ Changes will be announced on Canvas and updated here.
 
 ## Thursday 5/8
 8:30 - 11:00 pm on the 0.7 m: Cosmological Coupling
+
 11:00pm - 01:00 am on the 0.7 m: The Local Group
 
 
