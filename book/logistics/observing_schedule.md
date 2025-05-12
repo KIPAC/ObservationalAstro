@@ -8,7 +8,7 @@ Tuesday 8:00 pm - 2:00 am: All-Seeing
 
 Wednesday 8:30 pm - 2:00 am: Observing Knights
 
-Next week: Cosmological Coupling and Local Group
+Thursday or next week: Cosmological Coupling and Local Group
 
 
 ## Thursday 5/8
