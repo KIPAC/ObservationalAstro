@@ -2,6 +2,11 @@
 
 Changes will be announced on Canvas and updated here.
 
+
+## Week of 5/12
+Tuesday 8:00 pm - 2:00 am: All-Seeing
+Wednesday 8:30 pm - 2:00 am: Observing Knights
+
 ## Thursday 5/8
 8:30 - 11:00 pm on the 0.7 m: The Local Group
 
