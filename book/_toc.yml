@@ -21,10 +21,7 @@ parts:
       - file: labs/lab_1.2
   - caption: "Statistics Homework"
     chapters:
-      - url: labs/stats_hw/statistics_homework.pdf
-        title: Question PDF
-      - url: https://drive.google.com/drive/u/1/folders/19VfdITJfYHv5aXS6CMqIspjit9taBP0m
-        title: Data files
+      - file: labs/statistics_homework
   - caption: "Final Project"
     chapters:
       - file: labs/project_ideas
