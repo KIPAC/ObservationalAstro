@@ -21,7 +21,7 @@ parts:
       - file: labs/lab_1.2
   - caption: "Statistics Homework"
     chapters:
-      - file: labs/statistics_homework
+      - file: labs/statistics_hw/statistics_hw
   - caption: "Final Project"
     chapters:
       - file: labs/project_ideas
