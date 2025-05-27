@@ -1,0 +1,906 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Lab 1.2: Uncertainty Quantification &#8212; Observational Astrophysics (Physics 100)</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'labs/lab_1.2';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Potential Project Topics" href="project_ideas.html" />
+    <link rel="prev" title="Lab 1.1: Source Extraction and Differential Photometry" href="lab_1.1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../welcome.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Observational Astrophysics (Physics 100) - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Observational Astrophysics (Physics 100) - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../welcome.html">
+                    Welcome to Physics 100!
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Logistics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../logistics/class_schedule.html">Class Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logistics/observing_schedule.html">Observing Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logistics/shared_data.html">Shared Data</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Lab 0</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="lab_0.0.html">Lab 0.0: Observing Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab_0.1.html">Lab 0.1: The Night Sky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab_0.2.html">Lab 0.2: Solving, Stacking, and Pretty Pictures!</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Lab 1</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="lab_1.0.html">Lab 1.0: Flats, Darks, and Biases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab_1.1.html">Lab 1.1: Source Extraction and Differential Photometry</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lab 1.2: Uncertainty Quantification</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Final Project</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="project_ideas.html">Potential Project Topics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Other Resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../spectroscopy/spectroscopy.html">Spectroscopy Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_tutorial.html">Introduction to Python and FITS</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/KIPAC/ObservationalAstro/blob/main/book/labs/lab_1.2.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/KIPAC/ObservationalAstro" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/KIPAC/ObservationalAstro/issues/new?title=Issue%20on%20page%20%2Flabs/lab_1.2.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/labs/lab_1.2.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lab 1.2: Uncertainty Quantification</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#poisson-noise">Poisson Noise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gain">Gain</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sources-of-uncertainty">Sources of Uncertainty</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#readout-noise">1. Readout noise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dark-current">2. Dark current</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#background">3. Background</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#source">4. Source</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combined-uncertainty">Combined uncertainty</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#propagating-to-magnitudes">Propagating to magnitudes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgements">Acknowledgements</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lab-1-2-uncertainty-quantification">
+<h1>Lab 1.2: Uncertainty Quantification<a class="headerlink" href="#lab-1-2-uncertainty-quantification" title="Link to this heading">#</a></h1>
+<p><em>Due: Wednesday, April 30 by 5:00 pm.</em></p>
+<p>In this lab, we will be adding <strong>error bars</strong> to the color-magnitude diagrams we made in Lab 1.1. By the end of this lab, you will be able to</p>
+<ul class="simple">
+<li><p>estimate the gain of the camera and compare to the manufacturer’s value</p></li>
+<li><p>estimate the error from readout, dark current, and shot noise</p></li>
+<li><p>propagate into a final uncertainty on magnitudes and color</p></li>
+</ul>
+<p>By this point, you have successfully created calibrated <strong>color-magnitude diagrams</strong> for both M35 and M3 on each telescope. Amazing! However, in scientific research, it’s not enough to simply present our results — we must also understand the uncertainties that come with them. Every flux measurement, every calibration step, carries with it some level of error. It’s important to quantify these uncertainties because it tells us how much we trust what we see, and where we might need to be cautious.</p>
+<p>This is the last part of Lab 1, so we will be leaving most of the structure of the code up to you as preparation for your independent projects. You will need to submit code which calculates all the relevant uncertainties and the same color-magnitude diagrams as Lab 1.1, but now with error bars on both axes!</p>
+<section id="poisson-noise">
+<h2>Poisson Noise<a class="headerlink" href="#poisson-noise" title="Link to this heading">#</a></h2>
+<p>As the photons from distant sources hit our camera, they kick out electrons that we count in each pixel and create an image. In this document we will assume that one photon produces one electron and use the terms interchangeably unless otherwise specified. The number of electrons has a Poisson distribution, and the uncertainty in this number is called “shot noise”.</p>
+<p>If we detect <span class="math notranslate nohighlight">\(N\)</span> electrons, the uncertainty on this value due to the shot noise is <span class="math notranslate nohighlight">\(\sqrt{N}\)</span>. In other words, the signal-to-noise ratio is <span class="math notranslate nohighlight">\(S/N=N/\sqrt{N}=\sqrt{N}\)</span>. For example, if we detect 10000 electrons from a star, the shot noise uncertainty will be 100 electrons.</p>
+<p>But there’s a catch — while the distribution of <em>electrons</em> is Poissonian, the distribution of <em>counts</em> in our image is not. This is because the number of counts output by our detector is not one-to-one with the number of electrons detected.</p>
+</section>
+<section id="gain">
+<h2>Gain<a class="headerlink" href="#gain" title="Link to this heading">#</a></h2>
+<p>To transform image counts into electrons into the other, we need to determine the <em><strong>gain</strong></em> of the camera. It is usually provided by the camera manufacturer, but we are also going to measure it.</p>
+<p>The gain is defined as the ratio of the number of electrons to counts in a pixel:</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{gain} = \frac{n_{e^-}}{n_{\mathrm{counts}}}.\]</div>
+<p>This essentially means that 1 count is outputted for every <span class="math notranslate nohighlight">\(G\)</span> photons that hit a given pixel in our detector. You might be wondering why this is necessary or even useful. One of the reasons is the existence of the readout noise. Even in an image where all the pixels contain the same number of electrons, we still get fluctuations in the output from the readout. Introducing the gain smooths out these fluctuations in the output image.</p>
+<p>We can measure the gain by measuring the differences between the expected and measured standard deviations in our images. For example, suppose 10,000 photons from a star hit our detector. From the properties of the Poisson distribution, we know that the uncertainty (standard deviation) on this number is <span class="math notranslate nohighlight">\(\sqrt{10000} = 100\)</span>. If the gain of our camera is exactly 1 electron per count, we get:</p>
+<div class="math notranslate nohighlight">
+\[\mu_{\mathrm{counts}} = \frac{\mu_{e^-}}{\mathrm{gain}} = \frac{10000}{1} = 10000\]</div>
+<div class="math notranslate nohighlight">
+\[\sigma_{\mathrm{counts}} = \frac{\sigma_{e^-}}{\mathrm{gain}} = \frac{100}{1} = 100\]</div>
+<p>We see that Poisson statistics are obeyed, i.e., <span class="math notranslate nohighlight">\(\sigma_{\mathrm{counts}} = \sqrt{\mu_{\mathrm{counts}}}\)</span>.</p>
+<p>Suppose, now, that the gain is 4 <span class="math notranslate nohighlight">\(e^-\)</span>/count instead. Then, we get:</p>
+<div class="math notranslate nohighlight">
+\[\mu_{\mathrm{counts}} = \frac{\mu_{e^-}}{\mathrm{gain}} = \frac{10000}{4} = 2500\]</div>
+<div class="math notranslate nohighlight">
+\[\sigma_{\mathrm{counts}} = \frac{\sigma_{e^-}}{\mathrm{gain}} = \frac{100}{4} = 25\]</div>
+<p>Clearly, in this case, <span class="math notranslate nohighlight">\(\sigma_{\mathrm{counts}} \neq \sqrt{\mu_{\mathrm{counts}}}\)</span>.</p>
+<p>This then gives us a tool to measure the gain:</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{gain} = \Big ( \frac{\sqrt{\mu_{counts}}}{\sigma_{\mathrm{counts}}} \Big )^2 = \frac{\mu_{\text{counts}}}{\sigma_{\mathrm{counts}}^2}.\]</div>
+<p>##Measuring the gain – a recipe</p>
+<p>Flat fields offer us a better way to measure the gain because they are (theoretically) uniformly illuminated, i.e., every pixel is receiving the same number of photons, making it easier to assess how <span class="math notranslate nohighlight">\(\mu_{\rm{counts}}\)</span> and <span class="math notranslate nohighlight">\(\sigma_{\rm{counts}}\)</span> scale.</p>
+<p>In the first part of this notebook, we will take you through how to estimate the gain from the flats you’ve already taken.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># If using Colab, mount your Google Drive to access data in the shared folder</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">drive</span>
+<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import packages!</span>
+
+<span class="c1"># numpy is a core package for numerical computing in Python, mostly it does fast array operations</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># matplotlib is a common plotting library (plotly is another good one)</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+
+<span class="c1"># astropy is useful for reading FITS files, doing coordinate transformations, converting units, and much more</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">astropy</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">astropy.stats</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">astropy.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">fits</span>
+
+<span class="c1"># glob and os are useful for navigating your file system</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">glob</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="c1"># miscellaneous</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tqdm.notebook</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">defaultdict</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Specify data directory, and which object we want from which date</span>
+<span class="n">data_dir</span> <span class="o">=</span> <span class="s1">&#39;/content/drive/MyDrive/PHYSICS100_S2025/data/&#39;</span>
+<span class="n">date_string</span> <span class="o">=</span> <span class="c1"># TODO: pick a night of observing</span>
+<span class="n">telescope_name</span> <span class="o">=</span> <span class="c1"># TODO: pick a telescope</span>
+
+<span class="c1"># Gather all the filenames for the object and dates</span>
+<span class="n">filenames</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span> <span class="s1">&#39;calibration&#39;</span><span class="p">,</span> <span class="n">telescope_name</span><span class="p">,</span> <span class="n">date_string</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s1">*.fit&#39;</span><span class="p">))</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;flat&#39;</span><span class="p">,</span> <span class="s1">&#39;dark&#39;</span><span class="p">,</span> <span class="s1">&#39;bias&#39;</span><span class="p">]}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: load the calibration data from the night and telescope chosen above</span>
+<span class="c1"># Hint: see code from Lab 1.0 and 1.1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: Compute average bias</span>
+
+<span class="c1"># TODO: Compute average darks</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: Pick the set of flats from a single filter (B or V), and for each exposure time:</span>
+<span class="c1">#</span>
+<span class="c1">#       1) Create corrected flats by subtracting the average bias and dark from the flat. (Do not normalize!)</span>
+<span class="c1">#          Store these corrected flats in, e.g., a dictionary with exposure times as the keys.</span>
+<span class="c1">#</span>
+<span class="c1">#       2) In neighboring pairs of flats (of the same exposure length), e.g., F_A and F_B:</span>
+<span class="c1">#             a) Calculate the ratio of the mean signal levels r = F_A/F_B.</span>
+<span class="c1">#             b) Multiply flat B by this ratio r. This brings flat B to the same average signal level as flat A without affecting its</span>
+<span class="c1">#                noise structure or the pixel-to-pixel sensitivity variation.</span>
+<span class="c1">#             c) Subtract the (scaled) flat B from flat A. This ~removes the pixel sensitivity variations.</span>
+<span class="c1">#             d) Store these pair-differenced flats in, e.g., a dictionary with exposure times as the keys.</span>
+
+<span class="n">all_flats</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">diff_flats</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="k">for</span> <span class="n">time</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;flat&#39;</span><span class="p">][</span><span class="s1">&#39;B&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+
+  <span class="c1"># NOTE: these objects are dictionaries with time as the key!</span>
+  <span class="n">all_flats</span><span class="p">[</span><span class="n">time</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="n">diff_flats</span><span class="p">[</span><span class="n">time</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+
+  <span class="k">for</span> <span class="n">flat</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;flat&#39;</span><span class="p">][</span><span class="s1">&#39;B&#39;</span><span class="p">][</span><span class="n">time</span><span class="p">]:</span>
+
+    <span class="n">corrected_flat</span> <span class="o">=</span> <span class="c1"># TODO: compute corrected flat with dark and bias</span>
+    <span class="n">all_flats</span><span class="p">[</span><span class="n">time</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">corrected_flat</span><span class="p">)</span>
+
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">all_flats</span><span class="p">[</span><span class="n">time</span><span class="p">])):</span>
+    <span class="c1"># TODO: append i pair-differenced flats to diff_flats[time]</span>
+    <span class="c1"># Hint: make sure you are scaling the flats relative to each other</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: Plot one of your pair-differenced flats. The average count value of this image should be ~0. Is this the case?</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">diff_flats</span><span class="p">[</span><span class="mf">0.3</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Grays&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: In the above image, identify a ~uniform (feature-free) 50x50 pixel region.</span>
+<span class="c1">#       Then, for every flat in every exposure time, calculate the mean count value in this region.</span>
+<span class="c1">#       Store these values in a single array.</span>
+
+<span class="n">mean_counts</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">time</span> <span class="ow">in</span> <span class="n">all_flats</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">flat</span> <span class="ow">in</span> <span class="n">all_flats</span><span class="p">[</span><span class="n">time</span><span class="p">]:</span>
+
+      <span class="n">block</span> <span class="o">=</span> <span class="n">flat</span><span class="p">[:,</span> <span class="p">:]</span> <span class="c1"># TODO: pick x and y pixel values that correspond to a 50x50 uniform box</span>
+      <span class="n">mean_counts</span><span class="o">.</span><span class="n">append</span><span class="p">()</span> <span class="c1"># TODO: append the mean of the chosen block to mean_counts</span>
+
+<span class="n">mean_counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">mean_counts</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: For every pair-differenced flat in every exposure time, calculate the variance in the count value in the same region.</span>
+<span class="c1">#       Divide the resulting variance by 2 to correct for the fact that the variance doubles when you subtract two flats from another.</span>
+<span class="c1">#       Store these values in a single array.</span>
+
+<span class="n">var_counts</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">time</span> <span class="ow">in</span> <span class="n">diff_flats</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+  <span class="k">for</span> <span class="n">flat</span> <span class="ow">in</span> <span class="n">diff_flats</span><span class="p">[</span><span class="n">time</span><span class="p">]:</span>
+
+    <span class="n">block</span> <span class="o">=</span> <span class="n">flat</span><span class="p">[:,</span> <span class="p">:]</span> <span class="c1"># TODO: pick the same block as above</span>
+
+    <span class="n">var_counts</span><span class="o">.</span><span class="n">append</span><span class="p">()</span> <span class="c1"># TODO: append the variance of the chosen block to var_counts</span>
+
+<span class="n">var_counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">var_counts</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(,</span> <span class="p">)</span> <span class="c1"># TODO: Plot mean counts as a function of variance. You should see a roughly linear relationship between these two values.</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\sigma_{\rm</span><span class="si">{counts}</span><span class="s1">}^2$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">labelpad</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\mu_{\rm</span><span class="si">{counts}</span><span class="s1">}$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">labelpad</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: Estimate the gain by using the fact that gain = mean(counts) / variance(counts).</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Question: Does the gain you found above match the gain from the header? (Hint: if you are off by a factor of 2, where could that factor have come from? If this is the case, be sure to fix it before submitting!)</strong></p>
+<p>Answer:</p>
+</section>
+<section id="sources-of-uncertainty">
+<h2>Sources of Uncertainty<a class="headerlink" href="#sources-of-uncertainty" title="Link to this heading">#</a></h2>
+<p>Broadly speaking, there are four significant sources of noise in our data. They are as follows:</p>
+<section id="readout-noise">
+<h3>1. Readout noise<a class="headerlink" href="#readout-noise" title="Link to this heading">#</a></h3>
+<p>Turning the electrons in a CCD into an image on our computer screen is a relatively complicated process involving transporting the electrons within the CCD, putting them into a capacitor and measuring the voltage, and so on. On average, this voltage measurement correct, but random scatter does occur — this is the <em>readout noise</em>. To measure this effect, we need an image that in principle should have the same pixel value everywhere. Can you think of what type of image exhibits this behavior?</p>
+<p>That’s right — the bias! Recall that the bias frame is a “zero-second” exposure dark, meaning all the counts that we measure should come from the charge that is injected uniformly to all pixels (the minimum “bias” signal that brings our CCDs into the linear response region). Any fluctuations that we see are due to the readout noise.</p>
+<p>We will call this readout noise <span class="math notranslate nohighlight">\(\sigma_{\text{readout}}\)</span>. Note that there will be read noise for every individual frame that goes into your coadded image, so think carefully how to estimate the total error. (Hint: the variance of a sum of Gaussians is the sum of the individual variances.)</p>
+</section>
+<section id="dark-current">
+<h3>2. Dark current<a class="headerlink" href="#dark-current" title="Link to this heading">#</a></h3>
+<p>Since our cameras are not cooled to absolute zero, they produce (thermal) electrons even when not exposed to light. We can measure this dark current in our master dark image. We will call this thermal noise <span class="math notranslate nohighlight">\(\sigma_{\text{dark}}\)</span>. <strong>You may neglect this error if you can show it is negligible compared to other sources of noise.</strong></p>
+</section>
+<section id="background">
+<h3>3. Background<a class="headerlink" href="#background" title="Link to this heading">#</a></h3>
+<p>Recall from Lab 1.1 that there is background flux that we subtract from our star flux. The background flux also has noise that we must estimate. One approach is to assume Poisson statistics, but due to the many possible sources of background this may not be a good assumption.</p>
+<p>Instead, we will estimate the background noise using the variance of pixels in the background annulus of each star. This will give us a per-pixel background which we can then scale according to the area of the aperture to compute <span class="math notranslate nohighlight">\(\sigma_\text{sky}\)</span>.</p>
+</section>
+<section id="source">
+<h3>4. Source<a class="headerlink" href="#source" title="Link to this heading">#</a></h3>
+<p>Finally, there is intrinsic Poisson noise in the number of photons coming from our source. We will call this <span class="math notranslate nohighlight">\(\sigma_\text{source}\)</span> and estimate this from the counts within each star’s aperture. Each star will have a substantially different value here. Don’t forget to account for the gain before assuming Poisson statistics!</p>
+</section>
+<section id="combined-uncertainty">
+<h3>Combined uncertainty<a class="headerlink" href="#combined-uncertainty" title="Link to this heading">#</a></h3>
+<p>Since we assume the above effects to be independent from each other, to get a total uncertainty, we can simply sum their variances. Taking a square root of the result gives us the total uncertainty:</p>
+<div class="math notranslate nohighlight">
+\[\sigma_{\text{tot}} = \sqrt{N_{pixels,source}N_{images}\sigma_{\text{readout}}^2 + N_{pixels, source}N_{images}\sigma_{\text{dark}}^2 + \sigma_{\text{source}}^2 + N_{pixels, source}\sigma_{\text{sky}}^2}.\]</div>
+<p>Remember: all these different noise components need to be determined from the number of <em>electrons</em>, not the image counts. The simplest approach would be to correct your fluxes according to the gain at the very start, to avoid mistakes. And remember – each star will have a different <span class="math notranslate nohighlight">\(\sigma_\text{tot}\)</span>!</p>
+</section>
+<section id="propagating-to-magnitudes">
+<h3>Propagating to magnitudes<a class="headerlink" href="#propagating-to-magnitudes" title="Link to this heading">#</a></h3>
+<p>In the end, we need to place error bars on not the fluxes (<span class="math notranslate nohighlight">\(f_*\)</span>) but the <strong>magnitudes</strong> (<span class="math notranslate nohighlight">\(m\)</span>) of our stars. Remember, flux is related to instrumental magnitude via</p>
+<div class="math notranslate nohighlight">
+\[m_{\mathrm{instr.}} = -2.5 \log_{10}(f_*).\]</div>
+<p>In other words, the instrumental magnitude you measure for a star is a function of an uncertain variable. You can propagate your error on <span class="math notranslate nohighlight">\(f_*\)</span> to an error on <span class="math notranslate nohighlight">\(m_{\mathrm{instr.}}\)</span> using the following.</p>
+<p>For a function <span class="math notranslate nohighlight">\(g\)</span> of an uncertain variable <span class="math notranslate nohighlight">\(x \pm \sigma_x\)</span>, the uncertainty on <span class="math notranslate nohighlight">\(g\)</span> (i.e., <span class="math notranslate nohighlight">\(\sigma_g\)</span>) is given by:
+$<span class="math notranslate nohighlight">\(\sigma_g = \sqrt{ \Big( \frac{\partial g}{\partial x} \Big )^2 \sigma_x^2}.\)</span>$</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: Put error bars on each point on your color-magnitude diagrams, there should be errors in color and magnitude</span>
+<span class="err">!</span>
+<span class="c1">#       (Hint: Reuse code from Lab 1.1 to make your lives much easier.)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We have given the general idea of how to measure and save uncertainties below. Note that this code block assumes your calibrated, coadded images live in a dictionary called <code class="docutils literal notranslate"><span class="pre">data</span></code> with keys corresponding to filters.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find the flux (in counts/second) within an aperture around each star</span>
+<span class="n">source_data</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="n">r1</span> <span class="o">=</span> <span class="c1"># TODO: pick an inner radius</span>
+<span class="n">r2</span> <span class="o">=</span> <span class="c1"># TODO: pick an outer radius</span>
+
+<span class="k">for</span> <span class="nb">filter</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;V&#39;</span><span class="p">]:</span>
+
+    <span class="c1">#TODO : measure source counts</span>
+
+    <span class="c1"># this code maps inner circle and outer annuli to actual pixel location in the image</span>
+    <span class="n">ny</span><span class="p">,</span> <span class="n">nx</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="nb">filter</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">Y</span><span class="p">,</span> <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ogrid</span><span class="p">[:</span><span class="n">ny</span><span class="p">,</span> <span class="p">:</span><span class="n">nx</span><span class="p">]</span>
+    <span class="n">var_bkg</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sources</span><span class="p">))):</span>
+
+      <span class="n">dR</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">X</span> <span class="o">-</span> <span class="n">sources</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">Y</span> <span class="o">-</span> <span class="n">sources</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+      <span class="n">annulus_mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">dR</span> <span class="o">&gt;=</span> <span class="n">r1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">dR</span> <span class="o">&lt;</span> <span class="n">r2</span><span class="p">)</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="nb">filter</span><span class="p">])</span>
+      <span class="n">annulus_pixels</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="nb">filter</span><span class="p">][</span><span class="n">annulus_mask</span><span class="p">]</span>
+      <span class="n">var_bkg</span><span class="o">.</span><span class="n">append</span><span class="p">()</span> <span class="c1"># TODO: append measured background variance to var_bkg</span>
+
+    <span class="c1"># TODO: perform flux and magnitude caluclations</span>
+    <span class="c1"># TODO: perform uncertainty calculations and add to source_data dictionary</span>
+
+    <span class="n">source_data</span><span class="p">[</span><span class="nb">filter</span><span class="p">][</span><span class="s1">&#39;flux&#39;</span><span class="p">]</span> <span class="o">=</span>
+    <span class="n">source_data</span><span class="p">[</span><span class="nb">filter</span><span class="p">][</span><span class="s1">&#39;mag&#39;</span><span class="p">]</span> <span class="o">=</span>
+
+    <span class="n">source_data</span><span class="p">[</span><span class="nb">filter</span><span class="p">][</span><span class="s1">&#39;flux_err&#39;</span><span class="p">]</span> <span class="o">=</span>
+    <span class="n">source_data</span><span class="p">[</span><span class="nb">filter</span><span class="p">][</span><span class="s1">&#39;mag_err&#39;</span><span class="p">]</span> <span class="o">=</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: Plot your color magnitude diagram with error bars!</span>
+<span class="c1"># Note that magnitudes should be corrected for the zero point offset.</span>
+<span class="c1"># Magnitude correction can be done before or after calculating uncertainties</span>
+<span class="c1"># since we assume this adds no error to our magnitudes</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Question: Do you notice a pattern in the size of the error bars? Why could this be?</strong></p>
+<p>Answer:</p>
+</section>
+</section>
+<section id="acknowledgements">
+<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Link to this heading">#</a></h2>
+<p>Acknowledgements here.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./labs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="lab_1.1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Lab 1.1: Source Extraction and Differential Photometry</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="project_ideas.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Potential Project Topics</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#poisson-noise">Poisson Noise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gain">Gain</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sources-of-uncertainty">Sources of Uncertainty</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#readout-noise">1. Readout noise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dark-current">2. Dark current</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#background">3. Background</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#source">4. Source</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combined-uncertainty">Combined uncertainty</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#propagating-to-magnitudes">Propagating to magnitudes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgements">Acknowledgements</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
